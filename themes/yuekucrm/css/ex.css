@@ -1,0 +1,23 @@
+/* pagenavi */
+#pagenavi a, #pagenavi a:visited, #pagenavi span {
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    padding: 1px 8px;
+}
+#pagenavi a, #pagenavi a:visited {
+    margin: 0 2px;
+}
+#pagenavi span.pages {
+    color: #777;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 0;
+}
+#pagenavi span.current {
+    margin: -2px 2px -1px;
+    padding: 0 9px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
