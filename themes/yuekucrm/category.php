@@ -6,8 +6,8 @@
 <div class="row " style="height:300px;padding-left:15px">
     <img class="img-responsive block-shadow" src="<?php
         $l_src = "";
-        if (is_category('product')) $l_src = bloginfo('template_url') + '/top2.jpg';
-        elseif (is_category('company')) $l_src = bloginfo('template_url') + '/top1.jpg';
+        if (is_category('product')) $l_src =  'top2.jpg';
+        elseif (is_category('company')) $l_src = 'top1.jpg';
         else $l_src = 'top3.jpg';
         echo get_stylesheet_directory_uri(). '/img/' .$l_src ;
     ?>">
@@ -64,7 +64,7 @@
             <?php
             if(is_category()) {
                 $cur_cat = get_category(get_query_var('cat'));
-                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page=3&paged=' . get_query_var('paged')); //$_GET["paged"]);
+                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page=5&paged=' . get_query_var('paged')); //$_GET["paged"]);
                 if ($the_query->have_posts()) {
                     $l_index = 0;
                     do {

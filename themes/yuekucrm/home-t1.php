@@ -1,31 +1,31 @@
 <?php
 $showCase = [
-    1 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top1.jpg", title=>"top1" ],
-    2 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top2.jpg", title=>"top2" ],
-    3 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top3.jpg", title=>"top3" ],
-    4 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top4.jpg", title=>"top4" ]
+    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top1.jpg", title=>"top1" ],
+    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top2.jpg", title=>"top2" ],
+    3 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top3.jpg", title=>"top3" ],
+    4 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top4.jpg", title=>"top4" ]
 ];
 
 $gridShowList = [
-    1 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top1.jpg", title=>"top1",
+    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top1.jpg", title=>"top1",
         comm=>'这个地方是一个很长的文本说明 <br> 11111111111' ],
-    2 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top2.jpg", title=>"top2",
+    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top2.jpg", title=>"top2",
         comm=>'这个地方是一个很长的文本说明 <br> 222222222222' ],
-    3 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top3.jpg", title=>"top3",
+    3 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top3.jpg", title=>"top3",
         comm=>'这个地方是一个很长的文本说明 <br> 33333333333' ],
-    4 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top4.jpg", title=>"top4",
+    4 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top4.jpg", title=>"top4",
         comm=>'这个地方是一个很长的文本说明 <br> 4444444444' ],
-    5 => [ link=>"/", src=>get_bloginfo('template_url')."/img/top5.jpg", title=>"top5",
+    5 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top5.jpg", title=>"top5",
         comm=>'这个地方是一个很长的文本说明 <br> 5555555555' ]
 ];
 
 $rightBarList = [
-    1 => [ link=>"/", catename=>"toppage", title=>"首页文章" ],
-    2 => [ link=>"/", catename=>"industrysafe", title=>"行业安全" ],
-    3 => [ link=>"/", catename=>"safepublic", title=>"公共安全" ]
+    1 => [ link=>get_option('home'), catename=>"toppage", title=>"首页文章" ],
+    2 => [ link=>get_option('home'), catename=>"industrysafe", title=>"行业安全" ],
+    3 => [ link=>get_option('home'), catename=>"safepublic", title=>"公共安全" ]
 ];
 
-$rightBarVideo = [link=>"/",title=>"视频演示",
+$rightBarVideo = [link=>get_option('home'),title=>"视频演示",
     src=>"http://www.tudou.com/programs/view/html5embed.action?type=0&amp;code=3HGtLUN0A_s&amp;lcode=&amp;resourceId=0_06_05_99"];
 
 ?>
