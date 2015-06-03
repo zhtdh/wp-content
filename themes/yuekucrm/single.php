@@ -28,7 +28,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-                            <img class = "img-responsive" src="{{ renderVal.scanimg }}" alt="iphone">
+                            <img class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/top1.jpg'?>" alt="iphone">
                         </div>
                     </div>
                 </div>

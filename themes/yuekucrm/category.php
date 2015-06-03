@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php
+get_header();
+?>
 
 
 <div class="max-width" style="margin-left: -15px;">
@@ -7,7 +9,7 @@
     <img class="img-responsive block-shadow" src="<?php
         $l_src = "";
         if (is_category('product')) $l_src =  'top2.jpg';
-        elseif (is_category('company')) $l_src = 'top1.jpg';
+        elseif (is_category('about')) {  exit; }
         else $l_src = 'top3.jpg';
         echo get_stylesheet_directory_uri(). '/img/' .$l_src ;
     ?>">
@@ -28,7 +30,7 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        <img class = "img-responsive" src="{{ renderVal.scanimg }}" alt="iphone">
+                        <img class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/top1.jpg'?>" alt="iphone">
                     </div>
                 </div>
             </div>
