@@ -1,4 +1,12 @@
 <?php
+if (is_category(5)) {
+    wp_redirect("./?p=68");
+    exit;
+}
+?>
+
+
+<?php
 get_header();
 ?>
 
@@ -10,6 +18,7 @@ get_header();
         $l_src = "";
         if (is_category('product')) $l_src =  'top2.jpg';
         elseif (is_category('about')) {  exit; }
+        elseif (is_category('comanpyinfo')) { exit; }
         else $l_src = 'top3.jpg';
         echo get_stylesheet_directory_uri(). '/img/' .$l_src ;
     ?>">
@@ -66,7 +75,7 @@ get_header();
             <?php
             if(is_category()) {
                 $cur_cat = get_category(get_query_var('cat'));
-                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page=5&paged=' . get_query_var('paged')); //$_GET["paged"]);
+                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. get_option('posts_per_page').  '&paged=' . get_query_var('paged', 5)); //$_GET["paged"]);
                 if ($the_query->have_posts()) {
                     $l_index = 0;
                     do {
