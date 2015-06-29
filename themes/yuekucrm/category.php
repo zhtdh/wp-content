@@ -1,6 +1,6 @@
 <?php
-if (is_category(5)) {
-    wp_redirect("./?p=68");
+if (is_category(9)) {
+    wp_redirect("/archives/38");
     exit;
 }
 ?>

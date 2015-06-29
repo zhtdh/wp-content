@@ -35,7 +35,7 @@
     <div class="row">
         <img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo">
         <div style="float:right; padding-top: 50px;" >
-            <a href="./wp-admin" > login </a>
+            <a href="/wp-admin" > login </a>
         </div>
     </div>
 
