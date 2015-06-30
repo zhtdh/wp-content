@@ -100,7 +100,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
 
         </div>
 
-        <div class="col-xs-4" style="padding-top:8px;">
+        <div class="col-xs-4" style="padding-top:8px; height: 405px;">
             <div class="tab tab-primary border-all block-shadow" role="tabpanel" style="min-height: 190px;">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active" ><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><?php echo $rightBarList['1']['title']; ?></a></li>
@@ -108,7 +108,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                     <li role="presentation"><a href="#contact" role="tab" id="contact-tab" data-toggle="tab" aria-controls="contact"><?php echo $rightBarList['3']['title']; ?></a></li>
                 </ul>
 
-                <div id="myTabContent" class="tab-content" style="padding: 20px;border-top:1px solid lightgrey;">
+                <div id="myTabContent" class="tab-content" style="padding: 20px;border-top:1px solid lightgrey;height: 405px;">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
@@ -142,12 +142,18 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                 </div>
             </div>
             <br>
-            <div class="block block-primary-head no-pad border-allthick block-shadow block-light">
-                <h5><i class="glyphicon glyphicon-play-circle color-primary"> </i> <?php echo $rightBarVideo['title']; ?> </h5>
+            <!-- <div class="block block-primary-head no-pad border-allthick block-shadow block-light">
+                <h5><i class="glyphicon glyphicon-play-circle color-primary"> </i>
+                    <?php //echo $rightBarVideo['title']; ?>
+                </h5>
                 <div class="block-content">
-                    <iframe width="272" height="172" src="<?php echo $rightBarVideo['src']; ?>"></iframe>
+                    <iframe width="272" height="172" src="
+                    <?php
+                    //echo $rightBarVideo['src'];
+                    ?>
+                    "></iframe>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
