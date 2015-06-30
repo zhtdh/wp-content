@@ -1,10 +1,13 @@
 <?php
 if (is_category(9)) {
-    wp_redirect("/archives/38");
+    wp_redirect("/?p=38");
+    exit;
+}
+elseif (is_category(3)){
+    wp_redirect("/?p=27");
     exit;
 }
 ?>
-
 
 <?php
 get_header();
@@ -14,7 +17,9 @@ get_header();
 <div class="max-width" style="margin-left: -15px;">
 
 <div class="row " style="height:300px;padding-left:15px">
-    <img class="img-responsive block-shadow" src="<?php
+    <!-- <img class="img-responsive block-shadow max-height:300px;" src="-->
+    <img style="width:970px;height:300px;" src="
+    <?php
         $l_src = "";
         if (is_category('product')) $l_src =  'top2.jpg';
         elseif (is_category('about')) {  exit; }

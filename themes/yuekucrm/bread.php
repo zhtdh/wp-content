@@ -1,11 +1,11 @@
 <div class="mbx-dh">
-    当前位置：<a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a> &raquo;
+    当前位置：<a href="<?php bloginfo('url'); ?>"><?php bloginfo('description'); ?></a> &raquo;
     <?php
     if( is_single() ){
         $categorys = get_the_category();
         $category = $categorys[0];
         echo( get_category_parents($category->term_id,true,' &raquo; ') );
-        the_title();
+        //the_title();
     } elseif ( is_page() ){
         the_title();
     } elseif ( is_category() ){

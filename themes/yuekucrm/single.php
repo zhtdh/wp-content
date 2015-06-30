@@ -4,7 +4,9 @@
 <div class="max-width" style="margin-left: -15px;">
 
     <div class="row " style="height:300px;padding-left:15px">
-        <img class="img-responsive block-shadow" src="<?php
+        <!--<img class="img-responsive block-shadow" src=" -->
+        <img style="width:970px;height:300px;" src="
+        <?php
         $l_src = "";
         if (is_category('product')) $l_src = bloginfo('template_url') + '/top2.jpg';
         elseif (is_category('company')) $l_src = bloginfo('template_url') + '/top1.jpg';
@@ -53,15 +55,21 @@
                 <?php include('bread.php'); ?>
             </ol>
 
-            <div class="block-border-all block-shadow" style="min-height:600px; width:100%;padding:20px;">
+            <div class="block-border-all block-shadow postsingle" style="min-height:600px; width:100%;padding:20px;">
 
-                <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <h3 class="title" style="float:left;color: #00aff0;">
+                    <?php
+                        the_title();
+                    ?>
+                </h3>
+                <h4 style="clear:both;float: right">
+                    <?php
+                        echo '--';
+                        the_time('Y年n月j日');
+                    ?>
+                </h4>
 
-                <br/>
-                <?php the_time('Y年n月j日') ?>
-                <br/>
-                <?php the_tags('标签：', ', ', ''); ?>
-                <br/>
+                <div style="clear: both;">
 
                 <?php
                 if( have_posts() ){
@@ -74,12 +82,13 @@
                 }
                 ?>
 
+                </div>
             </div>
 
         </div>
     </div>
 </div>
 
-
+singlesinglesinglesinglesinglesinglesingle
 
 

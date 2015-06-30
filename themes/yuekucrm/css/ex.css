@@ -21,3 +21,8 @@
     line-height: 28px;
     text-align: center;
 }
+.postsingle p{
+    font-size: medium;
+    line-height: 30px;
+    text-indent: 2em;
+}
