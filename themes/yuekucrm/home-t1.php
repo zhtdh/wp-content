@@ -7,16 +7,16 @@ $showCase = [
 ];
 
 $gridShowList = [
-    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/软件.png", title=>"硬件",
+    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/硬件.png", title=>"硬件",
         comm=>'' ],
-    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/软件.jpg", title=>"软件",
+    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/软件.png", title=>"软件",
         comm=>'' ],
     3 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/高精度车辆.jpg", title=>"高精度车辆",
         comm=>'高精度车辆' ],
     4 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/GNSS高精度.jpg", title=>"GNSS高精度",
         comm=>'GNSS高精度' ],
-    5 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/受通201530097433.9GNSS基准站接收机-鼎成.jpg", title=>"受通201530097433.9GNSS基准站接收机-鼎成",
-        comm=>'受通201530097433.9GNSS基准站接收机-鼎成' ]
+    5 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/受通基准站接收机-鼎成.jpg", title=>"受通基准站接收机-鼎成",
+        comm=>'受通基准站接收机-鼎成' ]
 ];
 
 $rightBarList = [
