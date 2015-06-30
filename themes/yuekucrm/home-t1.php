@@ -7,22 +7,22 @@ $showCase = [
 ];
 
 $gridShowList = [
-    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/硬件.png", title=>"硬件",
+    1 => [ link=>get_bloginfo('template_url')."/img/硬件.png", src=>get_bloginfo('template_url')."/img/硬件.png", title=>"硬件",
         comm=>'' ],
-    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/软件.png", title=>"软件",
+    2 => [ link=>get_bloginfo('template_url')."/img/软件.png", src=>get_bloginfo('template_url')."/img/软件.png", title=>"软件",
         comm=>'' ],
-    3 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/高精度车辆.jpg", title=>"高精度车辆",
+    3 => [ link=>get_bloginfo('template_url')."/img/高精度车辆.jpg", src=>get_bloginfo('template_url')."/img/高精度车辆.jpg", title=>"高精度车辆",
         comm=>'高精度车辆' ],
-    4 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/GNSS高精度.jpg", title=>"GNSS高精度",
+    4 => [ link=>get_bloginfo('template_url')."/img/GNSS高精度.jpg", src=>get_bloginfo('template_url')."/img/GNSS高精度.jpg", title=>"GNSS高精度",
         comm=>'GNSS高精度' ],
-    5 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/受通基准站接收机-鼎成.jpg", title=>"受通基准站接收机-鼎成",
+    5 => [ link=>get_bloginfo('template_url')."/img/受通基准站接收机-鼎成.jpg", src=>get_bloginfo('template_url')."/img/受通基准站接收机-鼎成.jpg", title=>"受通基准站接收机-鼎成",
         comm=>'受通基准站接收机-鼎成' ]
 ];
 
 $rightBarList = [
     1 => [ link=>get_option('home'), catename=>"toppage", title=>"首页文章" ],
-    2 => [ link=>get_option('home'), catename=>"industrysafe", title=>"行业安全" ],
-    3 => [ link=>get_option('home'), catename=>"safepublic", title=>"公共安全" ]
+    2 => [ link=>get_option('home'), catename=>"industrysafe", title=>"公司新闻" ],
+    3 => [ link=>get_option('home'), catename=>"safepublic", title=>"行业新闻" ]
 ];
 
 $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
