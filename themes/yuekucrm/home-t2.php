@@ -167,4 +167,3 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
         </div>
     </div>
 </div>
-home-t2home-t2home-t2home-t2home-t2home-t2

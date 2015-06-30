@@ -89,7 +89,7 @@
     </div>
 </div>
 
-singlesinglesinglesinglesinglesinglesingle
+
 <?php get_footer();?>
 
 
