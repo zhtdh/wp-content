@@ -7,16 +7,16 @@ $showCase = [
 ];
 
 $gridShowList = [
-    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top1.jpg", title=>"top1",
-        comm=>'这个地方是一个很长的文本说明 <br> 11111111111' ],
-    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top2.jpg", title=>"top2",
-        comm=>'这个地方是一个很长的文本说明 <br> 222222222222' ],
-    3 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top3.jpg", title=>"top3",
-        comm=>'这个地方是一个很长的文本说明 <br> 33333333333' ],
-    4 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top4.jpg", title=>"top4",
-        comm=>'这个地方是一个很长的文本说明 <br> 4444444444' ],
-    5 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/top5.jpg", title=>"top5",
-        comm=>'这个地方是一个很长的文本说明 <br> 5555555555' ]
+    1 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/软件.png", title=>"硬件",
+        comm=>'' ],
+    2 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/软件.jpg", title=>"软件",
+        comm=>'' ],
+    3 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/高精度车辆.jpg", title=>"高精度车辆",
+        comm=>'高精度车辆' ],
+    4 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/GNSS高精度.jpg", title=>"GNSS高精度",
+        comm=>'GNSS高精度' ],
+    5 => [ link=>get_option('home'), src=>get_bloginfo('template_url')."/img/受通201530097433.9GNSS基准站接收机-鼎成.jpg", title=>"受通201530097433.9GNSS基准站接收机-鼎成",
+        comm=>'受通201530097433.9GNSS基准站接收机-鼎成' ]
 ];
 
 $rightBarList = [
