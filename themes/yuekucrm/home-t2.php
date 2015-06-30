@@ -112,7 +112,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
-                            $the_query = new WP_Query( 'category_name='.$rightBarList['1']['catename'].'&posts_per_page=5' );
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['1']['catename'].'&posts_per_page=15' );
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
@@ -126,7 +126,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
 
-                            $the_query = new WP_Query( 'category_name='.$rightBarList['2']['catename'].'&posts_per_page=5' );
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['2']['catename'].'&posts_per_page=15' );
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
@@ -140,7 +140,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
 
-                            $the_query = new WP_Query( 'category_name='.$rightBarList['3']['catename'].'&posts_per_page=5' );
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['3']['catename'].'&posts_per_page=15' );
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>

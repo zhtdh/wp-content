@@ -44,7 +44,7 @@ get_header();
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        <img class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/top1.jpg'?>" alt="iphone">
+                        <img style="margin-right: auto;margin-left: auto;" class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/weixin.jpg'?>" alt="<?php bloginfo('name');?>">
                     </div>
                 </div>
             </div>
