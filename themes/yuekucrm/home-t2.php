@@ -52,7 +52,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                         <div class="item <?php if ($iKey==1) echo 'active'; ?>" >
                             <a href="<?php echo $iValue["link"] ?>"><img src="<?php echo $iValue["src"] ?>" style="width:970px;height:300px;"> </a>
                             <div class="carousel-caption">
-                                <?php echo $iValue["title"] ?>
+                                <?php //echo $iValue["title"] ?>
                             </div>
                         </div>
                     <?php endforeach ?>
