@@ -90,7 +90,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                     <div class="col-xs-4 topgrey-background"  style="padding-top: 10px;">
                         <div class="block block-light border-allthick block-center block-shadow">
                             <a href="<?php echo $iValue['link'] ?>"><img src="<?php echo $iValue['src'] ?>" style="width:150px;height:120px;margin-bottom: 15px;"
-                                                                class="pull-left img-circle img-responsive"></a>
+                                                                         class="pull-left img-circle img-responsive"></a>
                             <p> <?php echo $iValue['comm'] ?> </p>
                         </div>
                     </div>
@@ -102,42 +102,52 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
 
         <div class="col-xs-4" style="padding-top:8px; height: 405px;">
             <div class="tab tab-primary border-all block-shadow" role="tabpanel" style="min-height: 190px;">
-                <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active" ><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><?php echo $rightBarList['1']['title']; ?></a></li>
-                    <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile"><?php echo $rightBarList['2']['title']; ?></a></li>
-                    <li role="presentation"><a href="#contact" role="tab" id="contact-tab" data-toggle="tab" aria-controls="contact"><?php echo $rightBarList['3']['title']; ?></a></li>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab"><?php echo $rightBarList['1']['title']; ?></a></li>
+                    <li><a href="#profile" data-toggle="tab"><?php echo $rightBarList['2']['title']; ?></a></li>
+                    <li><a href="#contact" data-toggle="tab"><?php echo $rightBarList['3']['title']; ?></a></li>
                 </ul>
 
-                <div id="myTabContent" class="tab-content" style="padding: 20px;border-top:1px solid lightgrey;height: 405px;">
+                <div class="tab-content" style="padding: 20px;border-top:1px solid lightgrey;height: 405px;">
                     <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
-                                $the_query = new WP_Query( 'category_name='.$rightBarList['1']['catename'].'&posts_per_page=5' );
-                                while ( $the_query->have_posts() ) {
-                                    $the_query->the_post();
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['1']['catename'].'&posts_per_page=5' );
+                            while ( $the_query->have_posts() ) {
+                                $the_query->the_post();
                                 ?>
                                 <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i>
                                     <span><a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
-                                <?php } ?>
+                            <?php } ?>
                         </ul>
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
-                        <?php
+                            <?php
 
-                        $the_query = new WP_Query( 'category_name='.$rightBarList['2']['catename'].'&posts_per_page=5' );
-                        while ( $the_query->have_posts() ) {
-                            $the_query->the_post();
-                            ?>
-                            <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['2']['catename'].'&posts_per_page=5' );
+                            while ( $the_query->have_posts() ) {
+                                $the_query->the_post();
+                                ?>
+                                <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
                             <a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
-                        <?php } ?>
+                            <?php } ?>
                         </ul>
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="contact" aria-labelledby="profile-tab">
-                        <p> 这里是一些静态文本啦。 </p>
+                        <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
+                            <?php
+
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['3']['catename'].'&posts_per_page=5' );
+                            while ( $the_query->have_posts() ) {
+                                $the_query->the_post();
+                                ?>
+                                <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
+                            <a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -149,12 +159,12 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                 <div class="block-content">
                     <iframe width="272" height="172" src="
                     <?php
-                    //echo $rightBarVideo['src'];
-                    ?>
+            //echo $rightBarVideo['src'];
+            ?>
                     "></iframe>
                 </div>
             </div> -->
         </div>
     </div>
 </div>
-homehomehomehomehomehomehome
+home-t2home-t2home-t2home-t2home-t2home-t2

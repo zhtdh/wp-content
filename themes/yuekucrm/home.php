@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-<?php  include('home-t1.php');  ?>
+<?php  include('home-t2.php');  ?>
 
 <?php get_footer(); ?>
