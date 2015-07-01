@@ -20,9 +20,9 @@ $gridShowList = [
 ];
 
 $rightBarList = [
-    1 => [ link=>get_option('home'), catename=>"toppage", title=>"首页文章" ],
-    2 => [ link=>get_option('home'), catename=>"industrysafe", title=>"公司新闻" ],
-    3 => [ link=>get_option('home'), catename=>"safepublic", title=>"行业新闻" ]
+    1 => [ link=>get_option('home'), catename=>"toppage", title=>get_category_by_slug('toppage')->name ],
+    2 => [ link=>get_option('home'), catename=>"industrysafe", title=>get_category_by_slug('industrysafe')->name ],
+    3 => [ link=>get_option('home'), catename=>"safepublic", title=>get_category_by_slug('safepublic')->name ]
 ];
 
 $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
@@ -116,7 +116,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
-                                <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i>
+                                <li> <i class="glyphicon glyphicon-ok primary-color"></i>
                                     <span><a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
                             <?php } ?>
                         </ul>
@@ -130,7 +130,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
-                                <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
+                                <li> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
                             <a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
                             <?php } ?>
                         </ul>
@@ -144,7 +144,7 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
-                                <li style="height:26px;"> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
+                                <li> <i class="glyphicon glyphicon-ok primary-color"></i> <span>
                             <a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
                             <?php } ?>
                         </ul>
