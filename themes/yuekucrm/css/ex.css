@@ -26,3 +26,28 @@
     line-height: 30px;
     text-indent: 2em;
 }
+.postsingle img{
+    max-width: 650px;
+}
+.page_right img{
+    max-width: 970px;
+}
+.logo{
+    /*background: rgba(0, 0, 0, 0) url("../img/1.png") repeat scroll 0 0;*/
+
+}
+.list-feature li{
+    margin-top: 5px;
+}
+.home-list li{
+    text-align: left;
+    list-style-type: disc;
+    margin-left: 10px;
+}
+body{
+    background-image:url("../img/bk1.jpg");
+    background-size: cover;
+}
+.home-list{
+    width: 100%;
+}

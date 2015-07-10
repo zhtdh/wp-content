@@ -80,7 +80,8 @@ get_header();
             <?php
             if(is_category()) {
                 $cur_cat = get_category(get_query_var('cat'));
-                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. get_option('posts_per_page').  '&paged=' . get_query_var('paged', 5)); //$_GET["paged"]);
+                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. get_option('posts_per_page').  '&paged=' .get_query_var('paged', 5)); //$_GET["paged"]);
+                //$the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. get_option('posts_per_page')); //$_GET["paged"]);
                 if ($the_query->have_posts()) {
                     $l_index = 0;
                     do {
@@ -90,7 +91,7 @@ get_header();
                     <tr>
                         <td scope="row"> <?php echo $l_index;?> </td>
                         <td><a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
-                        <td><?php  the_date() ?></td>
+                        <td><?php the_time('Y年n月j日'); ?></td>
                     </tr>
                     <?php
                     } while ($the_query->have_posts());

@@ -6,7 +6,9 @@ get_header();
 <div class="max-width" style="margin-left: -15px;">
 
 <div class="row " style="height:300px;padding-left:15px">
-    <img class="img-responsive block-shadow img-stretch-page" src="<?php
+    <!-- <img class="img-responsive block-shadow img-stretch-page" src=" -->
+    <img style="width:970px;height:300px;" src="
+    <?php
         $l_src = "";
         if (is_category('product')) $l_src =  'top2.jpg';
         elseif (is_category('about')) {  exit; }
@@ -31,7 +33,7 @@ get_header();
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        <img class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/top1.jpg'?>" alt="iphone">
+                        <img style="margin-right: auto;margin-left: auto;" class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/weixin.jpg'?>" alt="<?php bloginfo('name');?>">
                     </div>
                 </div>
             </div>
@@ -70,12 +72,13 @@ get_header();
                       $l_index += 1;
                       $the_query->the_post();
                       if (($l_index % 3 ) == 1) echo('<div class="row">');
-                      $l_ex_img_link = get_post_meta($post->ID, 'ex_img', true);
+                      //$l_ex_img_link = get_post_meta($post->ID, 'ex_img', true);
+                      $l_img_link = get_the_thumbnail_src();
                   ?>
 
                     <div class="col-xs-4  block-center" style="padding:5px;">
-                        <a href="<?php echo $l_ex_img_link; ?>" class="thumbnail img-stretch">
-                          <img style="height:200px;" src="<?php echo $l_ex_img_link; ?>" alt="placeholder thumbnail">
+                        <a href="<?php echo $l_img_link; ?>" class="thumbnail img-stretch">
+                          <img style="height:200px;" src="<?php echo $l_img_link; ?>" alt="placeholder thumbnail">
                         </a>
                         <br/>
                         <?php the_title(); ?>
