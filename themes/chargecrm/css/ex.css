@@ -1,0 +1,53 @@
+/* pagenavi */
+#pagenavi a, #pagenavi a:visited, #pagenavi span {
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    padding: 1px 8px;
+}
+#pagenavi a, #pagenavi a:visited {
+    margin: 0 2px;
+}
+#pagenavi span.pages {
+    color: #777;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 0;
+}
+#pagenavi span.current {
+    margin: -2px 2px -1px;
+    padding: 0 9px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+.postsingle p{
+    font-size: medium;
+    line-height: 30px;
+    text-indent: 2em;
+}
+.postsingle img{
+    max-width: 650px;
+}
+.page_right img{
+    max-width: 970px;
+}
+.logo{
+    /*background: rgba(0, 0, 0, 0) url("../img/1.png") repeat scroll 0 0;*/
+
+}
+.list-feature li{
+    margin-top: 5px;
+}
+.home-list li{
+    text-align: left;
+    list-style-type: disc;
+    margin-left: 10px;
+}
+body{
+    background-image:url("../img/bk1.jpg");
+    background-size: cover;
+}
+.home-list{
+    width: 100%;
+}

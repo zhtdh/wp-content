@@ -1,0 +1,64 @@
+/*定义页面主样式*/
+body,td,th {font-family:宋体; font-size:12px; color:#000000; line-height:24px;}
+body {background:url(../images/index_bg.gif) top repeat-x #FFFFFF; margin:0px; padding:10px 0px 10px 0px; text-align:left;}
+form {margin:0px; padding:0px;}
+
+/*定义链接样式*/
+a {font-size:12px;}
+a:link,a:visited {color:#444444; text-decoration:none;}
+a:hover,a:active {color:#FF0000; text-decoration:underline;}
+
+a.menu:link,a.menu:visited {color:#FFFFFF; font-size:12px; text-decoration:none;}
+a.menu:hover,a.menu:active {color:#F7E96A; font-size:12px; text-decoration:none;}
+
+a.homepage:link,a.homepage:visited {padding:0px 10px 0px 15px; background:url(../images/home.gif) left no-repeat;}
+a.homepage:hover,a.homepage:active {padding:0px 10px 0px 15px; background:url(../images/home.gif) left no-repeat;}
+
+a.favicon:link,a.favicon:visited {padding:0px 0px 0px 18px; background:url(../images/favicon.gif) left no-repeat;}
+a.favicon:hover,a.favicon:active {padding:0px 0px 0px 18px; background:url(../images/favicon.gif) left no-repeat;}
+
+/*定义文字样式*/
+h2 {font-size:21px; font-weight:bold; line-height:40px; display:inline;}
+
+/*定义页面内容DIV样式*/
+#div_main {margin:auto; width:980px; text-align:left;}
+
+/*定义商品图片链接样式*/
+.this_div_img a img {border:solid 1px #FFFFFF; text-decoration:none;}
+.this_div_img a:hover img {border:solid 1px #FF0000; text-decoration:none;}
+
+.text1{font-size:12px; line-height:24px; text-align:left;}
+.text2{font-weight:bold; color:#ff0000; letter-spacing:2px;}
+.text3{font-size:13px; font-weight:bold; color:#1678d1;}
+
+.title1{font-size:14px; font-weight:bold;color:#ffffff;letter-spacing:2px; text-align:center;}
+.title{font-size:16px; font-weight:bold;line-height:27px;color:#cc0000; text-align:left;}
+
+.table {width:100%; margin:0px 0px 10px 0px; border-left:solid 1px #eaeaea; border-top:solid 1px #eaeaea;}
+.table td {padding:0px 1px 0px 1px; border-right:solid 1px #eaeaea; border-bottom:solid 1px #eaeaea; line-height:30px;}
+.table th {padding:0px 1px 0px 1px; border-right:solid 1px #eaeaea; border-bottom:solid 1px #eaeaea; line-height:30px;}
+
+.table2 {width:100%; margin:0px 0px 10px 0px; border-left:solid 1px #a1d5a4; border-top:solid 1px #a1d5a4;}
+.table2 td {padding:0px 1px 0px 1px; border-right:solid 1px #a1d5a4; border-bottom:solid 1px #a1d5a4; line-height:30px;}
+
+.menu_bg_line {background:url(../images/line1.gif) right no-repeat;}
+
+
+/* js的幻灯片样式 -- 开始 */
+.mainbox{
+    overflow:hidden;
+    position:relative;
+}
+.flashbox{
+   overflow:hidden;
+    position:relative;
+}
+.imagebox{
+    text-align:right;position:relative;z-index:999;
+}
+
+.bitdiv{display:inline-block;width:18px;height:18px;margin:0 10px 10px 0px;cursor:pointer;float:right;}
+.defimg{background-image:url(../images/02.png)}
+.curimg{background-image:url(../images/01.png)}
+/* js的幻灯片样式 -- 结束 */
+
