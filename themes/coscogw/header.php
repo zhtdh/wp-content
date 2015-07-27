@@ -6,6 +6,7 @@
  * Time: 下午4:05
  */
 if (in_category(['business', 'msk']) and !is_home()) {
+    session_set_cookie_params(3600);
     session_start();
     //echo 'session start';
 }

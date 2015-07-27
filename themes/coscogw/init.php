@@ -6,7 +6,7 @@
  * Time: 下午6:54
  */
 //echo '111';
-define('LOCALHOSTNAME', '172.40.68.246');
+define('LOCALHOSTNAME', '172.40.68.245');
 
 //$localhost_name = '172.40.68.246';
 ?>

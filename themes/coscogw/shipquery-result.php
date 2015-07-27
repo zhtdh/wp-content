@@ -1,3 +1,17 @@
+<?php
+    var_dump($_SESSION['ship-query']);
+    $statement = $business_db->prepare("select count(1) clientcount from c_client_cod where client_cod = :clientcod");
+    $statement->execute(array('clientcod' => $loginUserName));
+    $row = $statement->fetch();
+    if (($row['CLIENTCOUNT'] > 0) and $loginUserName == $loginUserPw and $_SESSION['AUTHCODE'] == $authcode) {
+        //echo 'success';
+        $_SESSION['ship-query'] = $loginUserName;
+    } else {
+        $_SESSION['ship-query'] = null;
+    }
+    $statement = null;
+
+?>
 <div style="margin-left: 10px;">
     <table cellspacing="0" cellpadding="0" border="0"
            background="<?php bloginfo('template_url'); ?>/images/ywcxback.gif" width="697" height="40">

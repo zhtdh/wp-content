@@ -88,31 +88,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="nav">
             <a onmouseover="MM_swapImage('Image3','','<?php bloginfo('template_url'); ?>/images/index2.jpg',1)" onmouseout="MM_swapImgRestore()" href="/">
-                <img border="0" width="95" height="32" id="Image3" name="Image3" src="<?php bloginfo('template_url'); ?>/images/index2.jpg">
+                <img border="0" width="90" height="32" id="Image3" name="Image3" src="<?php bloginfo('template_url'); ?>/images/index2.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image4','','<?php bloginfo('template_url'); ?>/images/about2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/公司简介">
-                <img border="0" width="115" height="32" id="Image4" name="Image4" src="<?php bloginfo('template_url'); ?>/images/about1.jpg">
+                <img border="0" width="110" height="32" id="Image4" name="Image4" src="<?php bloginfo('template_url'); ?>/images/about1.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image5','','<?php bloginfo('template_url'); ?>/images/service2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/服务项目">
-                <img border="0" width="109" height="32" id="Image5" name="Image5" src="<?php bloginfo('template_url'); ?>/images/service1.jpg">
+                <img border="0" width="104" height="32" id="Image5" name="Image5" src="<?php bloginfo('template_url'); ?>/images/service1.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image6','','<?php bloginfo('template_url'); ?>/images/ywlch2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/业务流程">
-                <img border="0" width="110" height="32" id="Image6" name="Image6" src="<?php bloginfo('template_url'); ?>/images/ywlch1.jpg">
+                <img border="0" width="115" height="32" id="Image6" name="Image6" src="<?php bloginfo('template_url'); ?>/images/ywlch1.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image7','','<?php bloginfo('template_url'); ?>/images/news2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/category/news">
-                <img border="0" width="109" height="32" id="Image7" name="Image7" src="<?php bloginfo('template_url'); ?>/images/news1.jpg">
+                <img border="0" width="104" height="32" id="Image7" name="Image7" src="<?php bloginfo('template_url'); ?>/images/news1.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image8','','<?php bloginfo('template_url'); ?>/images/ychwl2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/运输网络">
-                <img border="0" width="109" height="32" id="Image8" name="Image8" src="<?php bloginfo('template_url'); ?>/images/ychwl1.jpg">
+                <img border="0" width="104" height="32" id="Image8" name="Image8" src="<?php bloginfo('template_url'); ?>/images/ychwl1.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image9','','<?php bloginfo('template_url'); ?>/images/partners2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/category/vehicles">
-                <img border="0" width="109" height="32" id="Image9" name="Image9" src="<?php bloginfo('template_url'); ?>/images/partners1.jpg">
+                <img border="0" width="104" height="32" id="Image9" name="Image9" src="<?php bloginfo('template_url'); ?>/images/partners1.jpg">
             </a>
             <a onmouseover="MM_swapImage('Image10','','<?php bloginfo('template_url'); ?>/images/message2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/在线留言">
-                <img border="0" width="109" height="32" id="Image10" name="Image10" src="<?php bloginfo('template_url'); ?>/images/message1.jpg">
+                <img border="0" width="104" height="32" id="Image10" name="Image10" src="<?php bloginfo('template_url'); ?>/images/message1.jpg">
             </a>
-            <a onmouseover="MM_swapImage('Image11','','<?php bloginfo('template_url'); ?>/images/contacUs2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/联系我们">
-                <img border="0" width="92" height="32" id="Image11" name="Image11" src="<?php bloginfo('template_url'); ?>/images/contacUs1.jpg">
+            <a width="87" onmouseover="MM_swapImage('Image11','','<?php bloginfo('template_url'); ?>/images/contacUs2.jpg',1)" onmouseout="MM_swapImgRestore()" href="<?php echo home_url();?>/联系我们">
+                <img border="0" width="87" height="32" id="Image11" name="Image11" src="<?php bloginfo('template_url'); ?>/images/contacUs1.jpg">
             </a>
         </div>
         <div class="main">

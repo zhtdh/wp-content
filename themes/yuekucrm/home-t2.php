@@ -29,6 +29,16 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
     src=>"http://www.tudou.com/programs/view/html5embed.action?type=0&amp;code=3HGtLUN0A_s&amp;lcode=&amp;resourceId=0_06_05_99"];
 
 ?>
+<script type="text/JavaScript">
+    $(function(){
+        if ($('#home').height() > 400){
+            $('#home ul li:first').before('<li style="text-align:right;"><span><a href="<?php echo get_category_link(get_category_by_slug('toppage')->cat_ID);?>">更多...</a></span></li>');
+        }
+        if ($('#profile').height() > 400){
+            $('#profile ul li:first').before('<li style="text-align:right;"><span><a href="<?php echo get_category_link(get_category_by_slug('industrysafe')->cat_ID);?>">更多...</a></span></li>');
+        }
+    });
+</script>
 
 
 
@@ -173,30 +183,50 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
         <div class="col-xs-4" style="padding-top:8px; height: 405px;">
             <div class="tab tab-primary border-all block-shadow" role="tabpanel" style="min-height: 190px;">
                 <ul class="nav nav-tabs">
-                    <li class="active" style="width: 50%;text-align: center;"><a href="#home" data-toggle="tab"><?php echo $rightBarList['1']['title']; ?></a></li>
-                    <li style="width: 50%;text-align: center;"> <a href="#profile" data-toggle="tab"><?php echo $rightBarList['2']['title']; ?></a></li>
+                    <li class="active" style="width: 50%;text-align: center;">
+                        <a href="#home" data-toggle="tab">
+                            <?php echo $rightBarList['1']['title']; ?>
+                            <!--<a style="font-size: 12px;position: absolute;right: 5px;bottom: 5px;line-height:10px;
+                                margin: 0;padding: 0;"
+                               href="<?php //echo get_category_link(get_category_by_slug('toppage')->cat_ID);?>">更多</a> -->
+                        </a>
+                    </li>
+                    <li style="width: 50%;text-align: center;">
+                        <a href="#profile" data-toggle="tab">
+                            <?php echo $rightBarList['2']['title']; ?>
+                        </a>
+                    </li>
                     <!--<li><a href="#contact" data-toggle="tab"><?php //echo $rightBarList['3']['title']; ?></a></li> -->
                 </ul>
 
-                <div class="tab-content" style="padding: 20px;border-top:1px solid lightgrey;height: 430px;">
-                    <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-                        <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
+                <div class="tab-content"
+                     style="padding: 0 10px 20px 20px;border-top:1px solid lightgrey;height: 430px;">
+                    <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab"
+                        style="overflow: auto;height: 409px;">
+                        <ul class="list list-feature" style="width:100%;padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
-                            $the_query = new WP_Query( 'category_name='.$rightBarList['1']['catename'].'&posts_per_page=15' );
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['1']['catename'].'&posts_per_page=10' );
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
-                                <li> <i class="glyphicon glyphicon-ok primary-color"></i>
-                                    <span><a href ="<?php the_permalink(); ?>"><?php the_title(); ?></a> </span> </li>
+                                <li>
+                                    <i class="glyphicon glyphicon-ok primary-color"></i>
+                                    <span>
+                                        <a href ="<?php the_permalink(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </span>
+                                </li>
                             <?php } ?>
                         </ul>
                     </div>
 
-                    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                    <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab"
+                         style="overflow: auto;height: 409px;">
                         <ul class="list list-feature" style="padding-top: -5px; font-size: 85%; line-height: 1.5em;">
                             <?php
 
-                            $the_query = new WP_Query( 'category_name='.$rightBarList['2']['catename'].'&posts_per_page=15' );
+                            $the_query = new WP_Query( 'category_name='.$rightBarList['2']['catename'].'&posts_per_page=10' );
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
