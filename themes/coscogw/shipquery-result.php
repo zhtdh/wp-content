@@ -1,18 +1,60 @@
+
 <?php
-    var_dump($_SESSION['ship-query']);
-    $queryStr = $business_db->prepare("select s.ship_no,s.ship_cod,s.ship_nam,s.e_voyage "
+    //var_dump($_SESSION['ship-query']);
+    $queryStr = "select s.ship_no ship_no,s.ship_cod ship_cod,s.ship_nam ship_nam,s.e_voyage e_voyage "
         . " from ship s where s.ship_corp_cod = :client_cod and (sysdate - s.leave_port_tim) < 300 "
-        . "order by s.ship_cod,s.e_voyage");
+        . "order by s.ship_cod,s.e_voyage";
     $exec = $business_db->prepare($queryStr);
     $exec->execute(array('client_cod' => $_SESSION['ship-query']));
-    $row = $statement->fetch();
-    if (($row['CLIENTCOUNT'] > 0) and $loginUserName == $loginUserPw and $_SESSION['AUTHCODE'] == $authcode) {
-        //echo 'success';
-        $_SESSION['ship-query'] = $loginUserName;
-    } else {
-        $_SESSION['ship-query'] = null;
+    $ships = array();
+    $oldshipcod = '';
+    $newshipcod = '';
+    while ($row = $exec->fetch()){
+        $newshipcod = $row['SHIP_COD'];
+        if ($newshipcod == $oldshipcod){
+            $ships[$newshipcod]['lists'][] = array('shipNo' => mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk'),
+                //'shipCod' => mb_convert_encoding($row['SHIP_COD'], 'utf-8', 'gbk'),
+                //'shipName' => mb_convert_encoding($row['SHIP_NAM'], 'utf-8', 'gbk'),
+                'shipVoyage' => mb_convert_encoding($row['E_VOYAGE'], 'utf-8', 'gbk'));
+
+        }else{
+            $ships[$newshipcod]['shipName'] = mb_convert_encoding($row['SHIP_NAM'], 'utf-8', 'gbk');
+            $ships[$newshipcod]['lists'] = array();
+            $ships[$newshipcod]['lists'][] = array('shipNo' => mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk'),
+                //'shipCod' => mb_convert_encoding($row['SHIP_COD'], 'utf-8', 'gbk'),
+                //'shipName' => mb_convert_encoding($row['SHIP_NAM'], 'utf-8', 'gbk'),
+                'shipVoyage' => mb_convert_encoding($row['E_VOYAGE'], 'utf-8', 'gbk'));
+        }
+        $oldshipcod = $row['SHIP_COD'];
     }
-    $statement = null;
+    //var_dump($row);
+    //$str=json_encode($row,JSON_UNESCAPED_UNICODE);
+    $str=wp_json_encode($ships);
+    //var_dump($str);
+?>
+<script type="text/javascript">
+    var arrclientvisit=JSON.parse(<?php echo "'" . $str ."'" ;?>);
+    //console.info(arrclientvisit);
+    $(function(){
+        $('#ShipName').remove('option');
+        $('#Voyage').remove('option');
+        $('#ShipName').append("<option value=''></option>");
+        $('#Voyage').append("<option value=''></option>");
+        $.each(arrclientvisit,function(name,value){
+            var str = "<option value='" + name + "'>" + value['shipName'] + "</option>" ;
+            $('#ShipName').append(str);
+        });
+        $('#ShipName').bind('change',function(event){
+
+        });
+        //$('#ShipName').append("<option value=''></option>");
+    });
+</script>
+
+<?php
+    $exec = null;
+    $row = null;
+    $queryStr = null;
 
 ?>
 <div style="margin-left: 10px;">
@@ -29,43 +71,18 @@
             </td>
             <td align="right" style="line-height: 40px;">
                 <div align="right" style="font-size: 13px; text-align: center; font-family: 微软雅黑">
-                    单船清单查询： 船名<select style="width:120px;" onchange="loadVoyages(this.selectedIndex)"
-                                      id="ctl00_Main_dropShipName" name="ctl00$Main$dropShipName">
-                        <option value="3111||20131101024376">安远1</option>
-                        <option value="1015S||20150608030404">阿彦</option>
-                        <option value="1017S||20150619030508">巴司</option>
-                        <option value="213E||20140616026129,221E||20140903026850">珊瑚岛</option>
-                        <option
-                            value="0814||20110603012982,2115||20110904015226,321||20101216010884,9513||20110307012206">
-                            商船三井奉献
-                        </option>
-                        <option value="1082||20110822014776">恩基5</option>
-                        <option value="555||20130527022478">伊朗临时</option>
-                        <option value="1187||20111206016430">和宏</option>
-                        <option value="3112||20131111024425">金洋69</option>
-                        <option value="028S||20110817014455" selected="selected">集海之鸿</option>
-                        <option value="3013||20130412022240,3102||20131014024067">恩基3</option>
-                        <option value="13181S||20130710022948">南泰7</option>
-                        <option value="0277E||20141008027716,0285E||20141223028258,252E||20140120024795">莲花岛</option>
-                        <option
-                            value="1329||20110826014995,1351||20110930015444,2239||20120305017037,2287||20120523018839,2333||20120803020016,2341||20120815020111,2379||20121013020433,2383||20121019020468,2397||20121113021089">
-                            鑫川6
-                        </option>
-                        <option value="2419||20120215016898,2491||20120703019399,9932||20111222016607">新华801</option>
-                        <option value="1132||20111012015755">绪扬15</option>
-                        <option value="1016S||20150612030444">阿迪</option>
+                    单船清单查询： 船名<select style="width:120px;"
+                                      id="ShipName" name="ShipName">
+                    </select>
+                    航次<select style="width:70px;" id="Voyage"
+                              name="Voyage">
+
 
                     </select>
-                    航次<select style="width:70px;" onchange="changeVoyage()" id="ctl00_Main_dropVoyage"
-                              name="ctl00$Main$dropVoyage">
-                        <option value="20110817014455" selected="selected">028S</option>
-
-                    </select>
-                    <input type="hidden" value="20110817014455" id="ctl00_Main_txtSShipNo" name="ctl00$Main$txtSShipNo">
-                    <input type="hidden" value="028S||20110817014455" id="ctl00_Main_txtSShip"
-                           name="ctl00$Main$txtSShip">
+                    <input type="hidden" value="20110817014455" id="ShipNo" name="ShipNo">
                     &nbsp;
-                    <!--<input name="ctl00$Main$txtShipNo" type="text" id="ctl00_Main_txtShipNo" onkeydown="if(event.keyCode==13) { event.keyCode=9; document.getElementById(&#39;btn_ShipManifest_Search&#39;).click();}" style="border-color: #CCCCCC; border-width: 1px; border-style: Solid; width: 212px;" /> --><input
+
+                    <input
                         type="submit" style="margin-left: 10px;
                                                                     width: 55px;" class="btnbg1"
                         id="ctl00_Main_btn_ShipManifest_Search" value="查询" name="ctl00$Main$btn_ShipManifest_Search">
