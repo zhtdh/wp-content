@@ -80,14 +80,15 @@ get_header();
             <?php
             if(is_category()) {
                 $cur_cat = get_category(get_query_var('cat'));
-                $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. '15' .  '&paged=' .get_query_var('paged', 1)); //$_GET["paged"]);
+                //var_dump(get_query_var('paged'));
+                $wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. '15' .  '&paged=' .get_query_var('paged', 1)); //$_GET["paged"]);
 
                 //$wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. get_option('posts_per_page')); //$_GET["paged"]);
-                if ($the_query->have_posts()) {
+                if ($wp_query->have_posts()) {
                     $l_index = 0;
                     do {
                         $l_index += 1;
-                        $the_query->the_post();
+                        $wp_query->the_post();
                     ?>
                     <tr>
                         <td scope="row"> <?php echo $l_index;?> </td>
@@ -95,7 +96,7 @@ get_header();
                         <td><?php the_time('Y年n月j日'); ?></td>
                     </tr>
                     <?php
-                    } while ($the_query->have_posts());
+                    } while ($wp_query->have_posts());
                 }
                 else {
                     echo "<tr><td></td><td><br/> 嘿！暂时没有数据，过段时间再来看看吧。 <p> &nbsp; </td></tr>";

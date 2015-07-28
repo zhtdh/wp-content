@@ -50,11 +50,10 @@ function p_link( $i, $title = '', $linktype = '' ) {
     if ( $linktype == '' ) { $linktext = $i; } else { $linktext = $linktype; }
     echo "<a class='page-numbers' href='" . esc_html( get_pagenum_link( $i ) ) . "' title='{$title}'>{$linktext}</a>";
 }
-function pagenavi( $before = '', $after = '', $p = 2 ) {  // $p是有效范围
+function pagenavi($before = '', $after = '', $p = 2 ) {  // $p是有效范围
     if ( is_singular() ) return;
     global $wp_query, $paged;
     $max_page = $wp_query->max_num_pages;
-    //var_dump($max_page);
     if ( $max_page == 1 ) return;
     if ( empty( $paged ) ) $paged = 1;  // 当前页
     echo $before.'<div id="pagenavi" style="text-align: center;clear:both;"> <ul class="pagination block-shadow"> '."\n";
