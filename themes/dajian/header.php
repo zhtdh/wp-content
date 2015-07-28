@@ -77,13 +77,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 -->
             </div>
             <div class="logo">
-                <a href="<?php echo home_url(); ?>">
-                    <img align="left" alt="青岛瑞亚通达物流有限公司" src="<?php bloginfo('template_url'); ?>/images/logo_4.jpg">
+                <a href="<?php echo home_url(); ?>" style="text-decoration:none;">
+                    <span style="font-family:楷体;font-size:300%;color:white;font-weight:800"> 青岛瑞亚通达物流有限公司 </span>
                 </a>
                 <div class="clear"></div>
             </div>
-            <div class="tel">
-                <img src="<?php bloginfo('template_url'); ?>/images/logo_6.jpg" border="0">
+            <div class="tel" style="line-height:120%;">
+<span style="font-size:200%;color:white;font-weight:600"> <small>联系电话:</small>18653250606 </span>   
             </div>
         </div>
         <div class="nav">
