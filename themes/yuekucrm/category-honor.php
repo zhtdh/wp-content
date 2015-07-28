@@ -65,13 +65,13 @@ get_header();
           if(is_category()) {
               $cur_cat = get_category(get_query_var('cat'));
               //$wp_query = new WP_Query('cat=' . $cur_cat->cat_ID  . '&posts_per_page=' . '3' . '&paged=' . get_query_var('paged', 1)); //$_GET["paged"]);
-              $wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. '6' . '&paged=' . get_query_var('paged', 1)); //$_GET["paged"]);
-              if ($wp_query->have_posts()) {
+              $the_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. '3' . '&paged=' . get_query_var('paged', 1)); //$_GET["paged"]);
+              if ($the_query->have_posts()) {
                   $l_index = 0;
                   global $post;
                   do {
                       $l_index += 1;
-                      $wp_query->the_post();
+                      $the_query->the_post();
                       if (($l_index % 3 ) == 1) echo('<div class="row">');
                       //$l_ex_img_link = get_post_meta($post->ID, 'ex_img', true);
                       $l_img_link = get_the_thumbnail_src();
@@ -91,7 +91,7 @@ get_header();
 
                   <?php
                     if (($l_index % 3 ) == 0) echo('</div>');
-                  } while ($wp_query->have_posts());
+                  } while ($the_query->have_posts());
                   pagenavi();
               }
               else {
