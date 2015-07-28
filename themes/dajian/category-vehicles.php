@@ -19,9 +19,9 @@
             <div class="yshwl_nrlb">
                 <ul>
                     <?php
-                    $wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page=' . '9' . '&paged=' . get_query_var('paged', 5)); //$_GET["paged"]);
+                    //$wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page=' . get_option('posts_per_page') . '&paged=' . get_query_var('paged', 1)); //$_GET["paged"]);
 
-                    //$wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. get_option('posts_per_page')); //$_GET["paged"]);
+                    $wp_query = new WP_Query('cat=' . $cur_cat->cat_ID . '&posts_per_page='. '9' . '&paged=' . get_query_var('paged', 1)); //$_GET["paged"]);
                     if ($wp_query->have_posts()) {
                         $l_index = 0;
                         do {

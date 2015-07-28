@@ -1,7 +1,10 @@
 <?php
     var_dump($_SESSION['ship-query']);
-    $statement = $business_db->prepare("select count(1) clientcount from c_client_cod where client_cod = :clientcod");
-    $statement->execute(array('clientcod' => $loginUserName));
+    $queryStr = $business_db->prepare("select s.ship_no,s.ship_cod,s.ship_nam,s.e_voyage "
+        . " from ship s where s.ship_corp_cod = :client_cod and (sysdate - s.leave_port_tim) < 300 "
+        . "order by s.ship_cod,s.e_voyage");
+    $exec = $business_db->prepare($queryStr);
+    $exec->execute(array('client_cod' => $_SESSION['ship-query']));
     $row = $statement->fetch();
     if (($row['CLIENTCOUNT'] > 0) and $loginUserName == $loginUserPw and $_SESSION['AUTHCODE'] == $authcode) {
         //echo 'success';

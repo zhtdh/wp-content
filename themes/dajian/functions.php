@@ -15,10 +15,10 @@ function pagenavi( $before = '', $after = '', $p = 2 ) {  // $p是有效范围
     if ( is_singular() ) return;
     global $wp_query, $paged;
     $max_page = $wp_query->max_num_pages;
-//    var_dump($wp_query->max_num_pages);
+    //var_dump($wp_query->max_num_pages);
     if ( $max_page == 1 ) return;
     if ( empty( $paged ) ) $paged = 1;  // 当前页
-    echo $before.'<div id="pagenavi" style="text-align: center;"> <ul class="pagination block-shadow"> '."\n";
+    echo $before.'<div id="pagenavi" style="text-align: center;clear:both;"> <ul class="pagination block-shadow"> '."\n";
     echo '<span class="pages">页面: ' . $paged . '/' . $max_page . ' </span> ';
     if ( $paged > 1 ) p_link( $paged - 1, '上1页', '上一页' );
     if ( $paged > $p + 1 ) p_link( 1, '第1页' );
