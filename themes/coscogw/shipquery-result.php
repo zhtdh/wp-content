@@ -36,16 +36,29 @@
     var arrclientvisit=JSON.parse(<?php echo "'" . $str ."'" ;?>);
     //console.info(arrclientvisit);
     $(function(){
-        $('#ShipName').remove('option');
-        $('#Voyage').remove('option');
         $('#ShipName').append("<option value=''></option>");
-        $('#Voyage').append("<option value=''></option>");
         $.each(arrclientvisit,function(name,value){
             var str = "<option value='" + name + "'>" + value['shipName'] + "</option>" ;
             $('#ShipName').append(str);
         });
         $('#ShipName').bind('change',function(event){
-
+            $('#Voyage').empty();
+            if (arrclientvisit.hasOwnProperty($('#ShipName').val())){
+            $.each(arrclientvisit[$('#ShipName').val()]['lists'],function(name,value){
+                var str = "<option value='" + value['shipNo'] + "'>" + value['shipVoyage'] + "</option>" ;
+                $('#Voyage').append(str);
+            });
+            }
+        });
+        $('#shipSearch').bind('click',function(event){
+            //console.info($('#Voyage').val());
+            $('#shipReport').load('<?php bloginfo("template_url"); ?>/shipreport.php',{'shipno':$('#Voyage').val()},function(t,s,x){
+            });
+        });
+        $('#shipDownloadbtn').bind('click',function(event){
+            //console.info();
+            $('#shipno').val($('#Voyage').val());
+            $('#shipdownload').submit();
         });
         //$('#ShipName').append("<option value=''></option>");
     });
@@ -55,9 +68,11 @@
     $exec = null;
     $row = null;
     $queryStr = null;
-
+    $oldshipcod = null;
+    $newshipcod = null;
 ?>
 <div style="margin-left: 10px;">
+
     <table cellspacing="0" cellpadding="0" border="0"
            background="<?php bloginfo('template_url'); ?>/images/ywcxback.gif" width="697" height="40">
         <tbody>
@@ -76,133 +91,20 @@
                     </select>
                     航次<select style="width:70px;" id="Voyage"
                               name="Voyage">
-
-
                     </select>
-                    <input type="hidden" value="20110817014455" id="ShipNo" name="ShipNo">
-                    &nbsp;
-
-                    <input
-                        type="submit" style="margin-left: 10px;
-                                                                    width: 55px;" class="btnbg1"
-                        id="ctl00_Main_btn_ShipManifest_Search" value="查询" name="ctl00$Main$btn_ShipManifest_Search">
-                    <input type="submit" style="margin-left: 10px;
-                                    width: 55px;" class="btnbg1" id="ctl00_Main_btn_ShipManifest_Download" value="下载"
-                           name="ctl00$Main$btn_ShipManifest_Download">
+                    <input type="submit" style="margin-left: 10px;width: 55px;" class="btnbg1"
+                           id="shipSearch" value="查询" name="shipSearch">
+                    <input type="submit" style="margin-left: 10px;width: 55px;" class="btnbg1"
+                           id="shipDownloadbtn" value="下载" name="shipDownloadbtn">
                 </div>
             </td>
         </tr>
         </tbody>
     </table>
+    <form id="shipdownload" style="display: none;" action="<?php bloginfo('template_url'); ?>/shipreportexcel.php" method="post">
+        <input name="shipno" type="hidden" id="shipno">
+    </form>
 </div>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>箱号</th>
-        <th>箱尺寸</th>
-        <th>箱型</th>
-        <th>提单号</th>
-        <th>箱铅封号</th>
-        <th>件数</th>
-        <th>重量</th>
-        <th>体检</th>
-        <th>温度</th>
-        <th>湿度</th>
-        <th>通风</th>
-        <th>中转港</th>
-        <th>目的港</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>TTLU9000297</td>
-        <td>40</td>
-        <td>HC</td>
-        <td>PASU5012792300</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>上海外五</td>
-        <td>上海外五</td>
-    </tr>
-    <tr>
-        <td>TTLU9000297</td>
-        <td>40</td>
-        <td>HC</td>
-        <td>PASU5012792300</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>上海外五</td>
-        <td>上海外五</td>
-    </tr>
-    <tr>
-        <td>TTLU9000297</td>
-        <td>40</td>
-        <td>HC</td>
-        <td>PASU5012792300</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>上海外五</td>
-        <td>上海外五</td>
-    </tr>
-    <tr>
-        <td>TTLU9000297</td>
-        <td>40</td>
-        <td>HC</td>
-        <td>PASU5012792300</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>上海外五</td>
-        <td>上海外五</td>
-    </tr>
-    <tr>
-        <td>TTLU9000297</td>
-        <td>40</td>
-        <td>HC</td>
-        <td>PASU5012792300</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>上海外五</td>
-        <td>上海外五</td>
-    </tr>
-    <tr>
-        <td>TTLU9000297</td>
-        <td>40</td>
-        <td>HC</td>
-        <td>PASU5012792300</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>上海外五</td>
-        <td>上海外五</td>
-    </tr>
-    </tbody>
-</table>
+<div id="shipReport">
+
+</div>
