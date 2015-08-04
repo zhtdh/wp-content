@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     <?php
-    if ($billquery_shipno != null and $billquery_billno != null) {
+    if (!empty($billquery_shipno) and !empty($billquery_billno) ) {
         $queryStr = " select c.cntr,c.cntr_siz_cod,c.cntr_typ_cod,c.cntr_seal_no,"
             . " to_char(c.pre_alloc_tim,'yyyy-mm-dd hh24:mi:ss') pre_alloc_tim,"
             . " to_char(c.alloc_tim,'yyyy-mm-dd hh24:mi:ss') alloc_tim "
@@ -20,7 +20,7 @@
             . " and c.bill_no = :bill_no and c.ship_no = :ship_no ";
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
-        while ($row = $exec->fetch()) {
+        while ($row = $exec->fetch(PDO::FETCH_ASSOC)) {
             //var_dump($row);
             ?>
             <tr>

@@ -7,13 +7,13 @@ $showCase = [
 ];
 
 $gridShowList = [
-    1 => [ link=>post_permalink(61), src=>get_bloginfo('template_url')."/img/product1.jpg", title=>"接收机",
+    1 => [ link=>get_category_link(get_category_by_slug('product1')->term_id), src=>get_bloginfo('template_url')."/img/product1.jpg", title=>"接收机",
         comm=>'接收机' ],
     2 => [ link=>get_category_link(get_category_by_slug('industryapp')->term_id), src=>get_bloginfo('template_url')."/img/软件.png", title=>"系统集成",
         comm=>'系统集成' ],
     3 => [ link=>get_bloginfo('template_url')."/img/高精度车辆.gif", src=>get_bloginfo('template_url')."/img/高精度车辆.gif", title=>"高精度车辆",
         comm=>'高精度车辆' ],
-    4 => [ link=>get_category_link(get_category_by_slug('honor')->term_id), src=>get_bloginfo('template_url')."/img/honor.png", title=>"荣誉资质",
+    4 => [ link=>get_category_link(get_category_by_slug('honor')->term_id), src=>get_bloginfo('template_url')."/img/ryzz.jpg", title=>"荣誉资质",
         comm=>'荣誉资质' ]/*,
     5 => [ link=>get_bloginfo('template_url')."/img/受通基准站接收机-鼎成.jpg", src=>get_bloginfo('template_url')."/img/受通基准站接收机-鼎成.jpg", title=>"受通基准站接收机-鼎成",
         comm=>'受通基准站接收机-鼎成' ]*/
@@ -123,7 +123,9 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                                     <?php echo $iValue['title']; ?>
                                 </a>
                             </h4>
-                            <a href="<?php echo $iValue['link'] ?>"><img class="img-thumbnail" src="<?php echo $iValue['src'] ?>" style="width:240px;height:135px;"></a>
+                            <a href="<?php echo $iValue['link'] ?>">
+                                <img class="img-thumbnail" src="<?php echo $iValue['src'] ?>" style="width:240px;height:135px;">
+                            </a>
                             <!-- <p> <?php //echo $iValue['comm'] ?></p> -->
                         </div>
                     </div>
@@ -167,8 +169,8 @@ $rightBarVideo = [link=>get_option('home'),title=>"视频演示",
                                 </h4>
                                 <a href="<?php echo $iValue['link'] ?>">
                                     <img src="<?php echo $iValue['src'] ?>"
-                                         style="width:150px;height:150px;margin-bottom: 15px; margin-left: auto;margin-right: auto;"
-                                         class="img-circle img-responsive">
+                                         style="width:220px;height:140px;margin-bottom: 15px; margin-left: auto;margin-right: auto;">
+                                         <!-- class="img-circle img-responsive"> -->
                                 </a>
 
                             </div>

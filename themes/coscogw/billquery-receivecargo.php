@@ -12,7 +12,7 @@
     </thead>
     <tbody>
     <?php
-    if ($billquery_shipno != null and $billquery_billno != null) {
+    if (!empty($billquery_shipno) and !empty($billquery_billno) ) {
         $queryStr = "select b.combine_no from contract_bill where bill_no = :bill_no and ship_no = :ship_no";
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
@@ -32,7 +32,7 @@
         }
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
-        while ($row = $exec->fetch()) {
+        while ($row = $exec->fetch(PDO::FETCH_ASSOC)) {
             //var_dump($row);
             ?>
             <tr>

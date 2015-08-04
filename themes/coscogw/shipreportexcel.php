@@ -8,6 +8,10 @@
 //数据查询
 //var_dump($_POST["shipno"]);
 include_once('dbconnect.php');
+if (!logincheck()){
+    echo '未登录';
+    exit;
+}
 $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
 $queryStr = " select c.cntr,c.cntr_siz_cod,c.cntr_typ_cod,b.bill_no,c.cntr_seal_no,c.cargo_pieces,"
     . "c.cntr_gross_wgt,c.cargo_volume,c.temp_set,c.humidity,c.ventilation,td.c_port_nam,"
@@ -58,7 +62,7 @@ $objPHPExcel->setActiveSheetIndex(0)
     ->setCellValue('H1', '体积')
     ->setCellValue('I1', '温度')
     ->setCellValue('J1', '湿度')
-    ->setCellValue('K1', '痛风')
+    ->setCellValue('K1', '通风')
     ->setCellValue('L1', '中转港')
     ->setCellValue('M1', '目的港');
 $i = 1;

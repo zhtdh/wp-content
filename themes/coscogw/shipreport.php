@@ -6,7 +6,12 @@
  * Time: 上午9:26
  */
 session_start();
+
 include_once('dbconnect.php');
+if (!logincheck()){
+    echo '未登录';
+    exit;
+}
 $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
 
 ?>

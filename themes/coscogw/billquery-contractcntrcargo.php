@@ -10,14 +10,14 @@
     </thead>
     <tbody>
     <?php
-    if ($billquery_shipno != null and $billquery_billno != null) {
+    if (!empty($billquery_shipno) and !empty($billquery_billno) ) {
         $queryStr = " select c.cntr,t.bill_no,t.cntr_crg_pieces,t.cntr_crg_wgt,t.cntr_crg_vol "
             . " from contract_cntr c,CONTRACT_CNTR_CARGO t "
             . " where c.cntr_sn = t.cntr_sn "
             . " and c.bill_no = :bill_no and c.ship_no =:ship_no order by c.cntr,t.bill_no ";
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
-        while ($row = $exec->fetch()) {
+        while ($row = $exec->fetch(PDO::FETCH_ASSOC)) {
             //var_dump($row);
             ?>
             <tr>

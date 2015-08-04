@@ -9,7 +9,7 @@
     $ships = array();
     $oldshipcod = '';
     $newshipcod = '';
-    while ($row = $exec->fetch()){
+    while ($row = $exec->fetch(PDO::FETCH_ASSOC)){
         $newshipcod = $row['SHIP_COD'];
         if ($newshipcod == $oldshipcod){
             $ships[$newshipcod]['lists'][] = array('shipNo' => mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk'),
@@ -53,10 +53,14 @@
         $('#shipSearch').bind('click',function(event){
             //console.info($('#Voyage').val());
             $('#shipReport').load('<?php bloginfo("template_url"); ?>/shipreport.php',{'shipno':$('#Voyage').val()},function(t,s,x){
+                if (t == '未登录'){
+                    window.location.href = "<?php echo urldecode(post_permalink($post->ID)); ?>";
+                }
             });
         });
         $('#shipDownloadbtn').bind('click',function(event){
             //console.info();
+            event.preventDefault();
             $('#shipno').val($('#Voyage').val());
             $('#shipdownload').submit();
         });

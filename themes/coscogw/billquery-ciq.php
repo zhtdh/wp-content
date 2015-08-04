@@ -7,7 +7,7 @@
     </thead>
     <tbody>
     <?php
-    if ($billquery_shipno != null and $billquery_billno != null) {
+    if (!empty($billquery_shipno) and !empty($billquery_billno) ) {
         $queryStr = " select cf.cntr,to_char(cf.stack_tim,'yyyy-mm-dd hh24:mi:ss') stack_tim"
             . " from contract_cntr cc,cntr_file cf"
             . " where cc.ship_no = :ship_no and cc.bill_no = :bill_no and cc.cntr_no = cf.cntr_no and cf.stack_over_id = '1'"
@@ -18,7 +18,7 @@
             . " and cf.current_stat <> '0' and cf.stack_over_id = '1' ";
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
-        while ($row = $exec->fetch()) {
+        while ($row = $exec->fetch(PDO::FETCH_ASSOC)) {
             //var_dump($row);
             ?>
             <tr>

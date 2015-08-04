@@ -15,7 +15,7 @@
     <tbody>
     <?php
 
-    if ($billquery_shipno != null and $billquery_billno != null) {
+    if (!empty($billquery_shipno) and !empty($billquery_billno)) {
         $queryStr = " select b.bill_no,tp.c_port_nam,dp.c_port_nam as c_port_nam_a,b.custom_id,c.cargo_pieces,"
             . " c.cargo_gross_wgt,c.cargo_volume, b.retire_id,b.combine_no "
             . " from contract_bill b,contract_cargo c,c_port tp,c_port dp "
@@ -23,7 +23,7 @@
             . " and b.disc_port_cod = dp.port_cod and b.ship_no = :ship_no  and b.bill_no = :bill_no ";
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
-        while ($row = $exec->fetch()) { ?>
+        while ($row = $exec->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
                 <td><?php echo mb_convert_encoding($row['BILL_NO'], 'utf-8', 'gbk'); ?></td>
                 <td><?php echo mb_convert_encoding($row['C_PORT_NAM'], 'utf-8', 'gbk'); ?></td>

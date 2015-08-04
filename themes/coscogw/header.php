@@ -6,7 +6,8 @@
  * Time: 下午4:05
  */
 if (in_category(['business', 'msk']) and !is_home()) {
-    session_set_cookie_params(3600);
+    //session_set_cookie_params(3600);
+    //session_set_cookie_params(10);
     session_start();
     //echo 'session start';
 }
@@ -257,6 +258,7 @@ include_once('init.php');
                 <li><a href="<?php echo home_url(); ?>/category/business/">业务查询</a></li>
                 <li><a href="<?php echo home_url(); ?>/category/news/">新闻资讯</a></li>
                 <li><a href="<?php echo home_url(); ?>/category/news/">内部查询</a></li>
+                <li><a href="<?php echo home_url(); ?>/category/news/">在线留言</a></li>
                 <li><a href="<?php echo home_url(); ?>/?p=66">联系我们</a></li>
                 <li><a href="<?php echo home_url(); ?>/category/msk/">马士基专页</a></li>
             </ul>

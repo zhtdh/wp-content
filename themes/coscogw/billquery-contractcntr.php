@@ -17,7 +17,7 @@
     </thead>
     <tbody>
     <?php
-    if ($billquery_shipno != null and $billquery_billno != null) {
+    if (!empty($billquery_shipno) and !empty($billquery_billno) ) {
         $queryStr = " select * from ( "
             . " select c.cntr,c.cntr_siz_cod,c.cntr_typ_cod,f.cntr_net_wgt,c.cntr_seal_no,"
             . " c.pre_cntr,c.pre_seal,f_get_available_id(c.available_id,c.available_tim) AS available_id,"
@@ -34,7 +34,7 @@
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
         $rownum = 0;
-        while ($row = $exec->fetch()) {
+        while ($row = $exec->fetch(PDO::FETCH_ASSOC)) {
             $rownum++;
             ?>
             <tr>

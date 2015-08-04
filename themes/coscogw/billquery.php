@@ -3,11 +3,11 @@ $billquery_billno = strtoupper($_GET['billno']);
 $billquery_flag = $_GET['queryflag'];
 $billquery_shipno = null;
 //var_dump($billquery_billno);
-if ($billquery_billno != null) {
+if (!empty($billquery_billno)) {
     //echo '查找';
     $statement = $business_db->prepare("select max(ship_no) ship_no from contract_bill where bill_no = :bill_no");
     $statement->execute(array('bill_no' => $billquery_billno));
-    while ($row = $statement->fetch()) {
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         $billquery_shipno = mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk');
         //var_dump($billquery_shipno);
     }
@@ -15,6 +15,16 @@ if ($billquery_billno != null) {
 }
 //var_dump($billquery_shipno);
 ?>
+<script type="text/javascript">
+    $(function(){
+        $('#billdownloadbtn').bind('click',function(event){
+            event.preventDefault();
+            $('#ebillno').val($('#billno').val());
+            //console.info($('#ebillno').val());
+            $('#billdownload').submit();
+    });
+});
+</script>
 <div class="DRight">
     <div style="margin-left: 10px;">
         <form action="<?php echo post_permalink($post->ID); ?>" method="get">
@@ -32,7 +42,7 @@ if ($billquery_billno != null) {
                     <td align="right" style="line-height: 40px;">
                         <div align="right" style="font-size: 13px; text-align: center; font-family: 微软雅黑">
                             提单查询：
-                            <input type="text" name="billno" style="vertical-align:middle;
+                            <input id="billno" type="text" name="billno" style="vertical-align:middle;
                         margin:0;border-color: #CCCCCC; border-width: 1px; border-style: Solid;
                          width: 212px;line-height: 20px;" value="<?php
                             if ($billquery_billno == null) {
@@ -43,7 +53,7 @@ if ($billquery_billno != null) {
                             ?>">
                             <input type="submit" style="margin-left: 10px; width: 55px;" class="btnbg1" value="查询"
                                    name="queryflag">
-                            <input type="submit" style="margin-left: 10px; width: 55px;" class="btnbg1" value="下载"
+                            <input type="submit" style="margin-left: 10px; width: 55px;" class="btnbg1" value="下载" id="billdownloadbtn"
                                    name="queryflag">
                         </div>
                     </td>
@@ -94,3 +104,6 @@ if ($billquery_billno != null) {
 
     </div>
 </div>
+<form id="billdownload" style="display: none;" action="<?php bloginfo('template_url'); ?>/billexcel.php" method="post">
+    <input name="ebillno" type="hidden" id="ebillno">
+</form>

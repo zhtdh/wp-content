@@ -1,6 +1,6 @@
 <?php
 $ship = null;
-if ($billquery_shipno != null) {
+if (!empty($billquery_shipno) ) {
     $queryStr = "select s.ship_cod,sc.e_ship_nam,sc.c_ship_nam,s.e_voyage,s.e_voyage_ship,s.ship_corp_cod,"
         . "to_char(s.leave_port_tim,'yyyy-mm-dd hh24:mi:ss') leave_port_tim,"
         . "to_char(s.cy_beg_tim,'yyyy-mm-dd hh24:mi:ss') cy_beg_tim,"
@@ -9,7 +9,7 @@ if ($billquery_shipno != null) {
         . " where s.ship_no = :ship_no and s.ship_cod = sc.ship_cod";
     $exec = $business_db->prepare($queryStr);
     $exec->execute(array('ship_no' => $billquery_shipno));
-    $ship = $exec->fetch();
+    $ship = $exec->fetch(PDO::FETCH_ASSOC);
 //        $billquery_shipno = mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk');
     $exec = null;
 }
