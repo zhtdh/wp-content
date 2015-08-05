@@ -6,7 +6,6 @@
  * Time: 下午4:22
  */
 get_header();
-//include_once('header.php');
 ?>
     <div class="category-container">
         <img src="<?php bloginfo('template_url'); ?>/images/banner3.jpg">

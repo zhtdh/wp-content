@@ -20,7 +20,7 @@ get_header();
     <?php
     //取分类目录left-sidebar
     get_sidebar(1);
-    if (in_category(['business', 'msk'])) {
+    if (in_category(['business', 'msk','internal'])) {
         //此处定义 $business_db 数据库链接
         include_once('dbconnect.php');
         $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);

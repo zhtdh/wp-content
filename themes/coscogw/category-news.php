@@ -12,7 +12,7 @@ get_header();
         <?php
         include('news-company.php');
         include('news-notice.php');
-        if ($_SERVER['SERVER_NAME'] == LOCALHOSTNAME){
+        if (localrequest()){
         ?>
         <div style="float: left; width: 620px;border:0; margin:0; padding:0; margin-top:10px">
             <?php
@@ -24,7 +24,4 @@ get_header();
     <br>
     category-newscategory-newscategory-newscategory-newscategory-newscategory-news
     <br>
-<?php
-print_r($_SERVER['SERVER_NAME']);
-?>
 <?php get_footer(); ?>

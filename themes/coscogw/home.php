@@ -66,7 +66,7 @@ get_header();
         <!--内部通知 或者 地理位置 -->
         <div style="float: left; width:300px; height:180px;margin-left:16px; margin-top:20px;_margin-top:10px;">
             <?php
-            if ($_SERVER['SERVER_NAME'] == LOCALHOSTNAME) {
+            if (localrequest()) {
                 include('news-inside.php');
             } else {
                 ?>

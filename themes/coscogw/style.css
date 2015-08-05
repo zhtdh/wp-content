@@ -781,3 +781,12 @@ table.noborder {
 .ship-list span {
     margin-left: 10px;
 }
+.message_nr {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+}
+.message_nr p {
+    height: 30px;
+    line-height: 30px;
+}
