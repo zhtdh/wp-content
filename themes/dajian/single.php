@@ -14,9 +14,11 @@ get_sidebar(1);?>
             <span><?php echo $cur_cat[0]->name; ?></span>
         </p>
         <div class="about_nr">
+
             <h1 style="text-align: center"><?php echo $cur_post->post_title;?></h1>
             </br>
             <?php echo $cur_post->post_content; ?>
+
         </div>
     </div>
 

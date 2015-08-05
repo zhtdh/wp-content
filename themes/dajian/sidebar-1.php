@@ -34,9 +34,9 @@
             <div class="banner" style="width: 100%">
                 <div data-ride="carousel" class="carousel slide" id="left-carousel-container">
                     <div class="carousel-inner">
-                        <div class="item active"><img alt="第一张图" src="<?php bloginfo('template_url'); ?>/images/leftbanner_1.jpg"></div>
+                        <div class="item active"><img alt="第一张图" src="<?php bloginfo('template_url'); ?>/images/IMG_3238.jpg"></div>
                         <div class="item"><img alt="第二张图" src="<?php bloginfo('template_url'); ?>/images/leftbanner_2.jpg"></div>
-                        <div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/leftbanner_3.jpg"></div>
+                        <div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/IMG_7867.jpg"></div>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <strong><font color="#ff0000">青岛瑞亚通达物流有限公司</font>&nbsp;</strong><br>
                 联系人：<br>
                 张经理：18653250606<br>
-                电话：86916965<br>
+                电&nbsp;&nbsp;&nbsp;话：86916965<br>
                 详细地址：青岛经济技术开发区江山北路10号</p>
         </div>
     </div>

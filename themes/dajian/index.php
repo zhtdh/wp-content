@@ -30,9 +30,9 @@
 
                 <div data-ride="carousel" class="carousel slide" id="left-carousel-container">
                     <div class="carousel-inner">
-                        <div class="item active"><img alt="第一张图" src="<?php bloginfo('template_url'); ?>/images/leftbanner_1.jpg"></div>
+                        <div class="item active"><img alt="第一张图" src="<?php bloginfo('template_url'); ?>/images/IMG_3238.jpg"></div>
                         <div class="item"><img alt="第二张图" src="<?php bloginfo('template_url'); ?>/images/leftbanner_2.jpg"></div>
-                        <div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/leftbanner_3.jpg"></div>
+                        <div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/IMG_7867.jpg"></div>
                     </div>
                 </div>
 

@@ -83,7 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="clear"></div>
             </div>
             <div class="tel" style="line-height:120%;">
-<span style="font-size:200%;color:white;font-weight:600"> <small>联系电话:</small>18653250606 </span>   
+                <span style="font-size:160%;color:white;font-weight:600">
+                    <small>联系电话:</small>
+                    18653250606
+                </span>
             </div>
         </div>
         <div class="nav">
@@ -124,8 +127,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div data-ride="carousel" class="carousel slide" id="carousel-container">
                         <div class="carousel-inner">
                             <div class="item active"><img alt="第一张图" src="<?php bloginfo('template_url'); ?>/images/banner_2.jpg"></div>
-                            <div class="item"><img alt="第二张图" src="<?php bloginfo('template_url'); ?>/images/banner_1.jpg"></div>
-                            <div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/banner_3.jpg"></div>
+                            <!-- <div class="item"><img alt="第二张图" src="<?php bloginfo('template_url'); ?>/images/banner_1.jpg"></div>-->
+                            <div class="item"><img alt="第二张图" src="<?php bloginfo('template_url'); ?>/images/IMG_0694.jpg"></div>
+                            <!--<div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/banner_3.jpg"></div>-->
+                            <div class="item"><img alt="第三张图" src="<?php bloginfo('template_url'); ?>/images/IMG_1060.jpg"></div>
                         </div>
                         <ol class="carousel-indicators">
                             <li class="active" data-slide-to="0" data-target="#carousel-container"></li>
