@@ -18,5 +18,5 @@ get_header();
         </div>
     </div>
 
-    category-businesscategory-businesscategory-businesscategory-businesscategory-business
+
 <?php get_footer(); ?>

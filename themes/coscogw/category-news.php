@@ -22,6 +22,4 @@ get_header();
         </div>
     </div>
     <br>
-    category-newscategory-newscategory-newscategory-newscategory-newscategory-news
-    <br>
 <?php get_footer(); ?>

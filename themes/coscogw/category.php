@@ -17,5 +17,4 @@ get_header();
 
         </div>
     </div>
-    categorycategorycategorycategorycategorycategorycategory
 <?php get_footer(); ?>

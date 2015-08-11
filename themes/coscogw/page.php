@@ -23,5 +23,5 @@ get_header();
         }
         ?>
     </div>
-    pagepagepagepagepagepagepagepagepage
+
 <?php get_footer(); ?>

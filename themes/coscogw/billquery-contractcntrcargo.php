@@ -17,17 +17,21 @@
             . " and c.bill_no = :bill_no and c.ship_no =:ship_no order by c.cntr,t.bill_no ";
         $exec = $business_db->prepare($queryStr);
         $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
+        $cntr = '';
         while ($row = $exec->fetch(PDO::FETCH_ASSOC)) {
             //var_dump($row);
             ?>
             <tr>
-                <td><?php echo mb_convert_encoding($row['CNTR'], 'utf-8', 'gbk'); ?></td>
+                <td><?php echo $cntr == $row['CNTR'] ? '' : mb_convert_encoding($row['CNTR'], 'utf-8', 'gbk'); ?></td>
                 <td><?php echo mb_convert_encoding($row['BILL_NO'], 'utf-8', 'gbk'); ?></td>
                 <td><?php echo mb_convert_encoding($row['CNTR_CRG_PIECES'], 'utf-8', 'gbk'); ?></td>
                 <td><?php echo mb_convert_encoding($row['CNTR_CRG_WGT'], 'utf-8', 'gbk'); ?></td>
                 <td><?php echo mb_convert_encoding($row['CNTR_CRG_VOL'], 'utf-8', 'gbk'); ?></td>
             </tr>
-        <?php }
+
+        <?php
+            $cntr = $row['CNTR'];
+        }
         $exec = null;
         $row = null;
         $queryStr = null;

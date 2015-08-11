@@ -7,4 +7,3 @@
  */
 ?>
 <?php get_header(); ?>
-indexindexindexindexindexindex

@@ -6,6 +6,11 @@
  * Date: 15-8-5
  * Time: 上午11:18
  */
+if (!localrequest()){
+    echo "<h3 style='color:red;'>" . '非内部员工禁止访问' . "</h3>";
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $loginUserName = $_POST['LoginName'];
     $loginUserPw = $_POST['LoginPwd'];

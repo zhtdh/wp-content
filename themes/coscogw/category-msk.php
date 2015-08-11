@@ -73,6 +73,4 @@ get_header();
             </div>
         </div>
     </div>
-
-    category-msk/category-msk/category-mskcategory-mskcategory-mskcategory-mskcategory-mskcategory-msk
 <?php get_footer(); ?>

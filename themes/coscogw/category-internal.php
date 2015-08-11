@@ -25,5 +25,5 @@ get_header();
         </div>
     </div>
 
-    category-internalcategory-internalcategory-internalcategory-internalcategory-internal
+
 <?php get_footer(); ?>

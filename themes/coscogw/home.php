@@ -23,17 +23,27 @@ get_header();
         include('news-notice.php');
         ?>
         <!--提单查询 -->
+        <script type="text/javascript">
+            $(function(){
+                $('#billno').bind('keypress',function(event){
+                    if (which == 13){}
+                        $('#billqueryform').submit();
+                })
+            });
+        </script>
         <div class="hy-zxfw-module">
             <div class="hy-zxfw-module-module">
                 <div class="hy-zxfwPnews-item">
                     <div align="right" style="font-size: 13px; text-align: center; font-family: 微软雅黑; color:#fff">
+                        <form id="billqueryform" action="<?php echo home_url(); ?>/提单查询-2" method="get">
                         提单查询：
                         <input type="text"
-                               style="border-color: #CCCCCC; border-width: 1px; border-style: Solid; width: 212px;"
-                               onkeydown="if(event.keyCode==13) { event.keyCode=9; document.getElementById('btn_Search').click();}"
-                               id="ctl00_Main_billno" name="ctl00$Main$billno">
+                               style="border-width: 1px; color: rgb(60,60,60); border-style: Solid; width: 212px;"
+
+                               id="billno" name="billno">
                         <input type="submit" style="margin-left: 10px; width: 55px;" class="btnbg1"
-                               id="ctl00_Main_btn_Search" value="查询" name="ctl00$Main$btn_Search">
+                               value="查询" name="queryflag">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -105,10 +115,8 @@ get_header();
             </div>
         </div>
     </div>
-    homehomehomehomehomehome
+
 <?php
-//global $localhost_name;
-//var_dump($localhost_name);
-//print_r($localhost_name);
+
 ?>
 <?php get_footer(); ?>
