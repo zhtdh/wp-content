@@ -69,13 +69,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="box">
         <div class="top">
-            <div class="top_links">
-<!--
-                <a class="a1" onclick="this.style.behavior='url(#default#homepage)';this.sethomepage(document.location.href);return false;" href="#">设为首页</a>
-                |
-                <a class="a1" onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';window.external.addFavorite(strHref,document.title)" href="#">加入收藏</a>
--->
-            </div>
             <div class="logo">
                 <a href="<?php echo home_url(); ?>" style="text-decoration:none;">
                     <span style="font-family:楷体;font-size:300%;color:white;font-weight:800"> 青岛瑞亚通达物流有限公司 </span>
