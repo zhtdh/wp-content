@@ -12,5 +12,4 @@ function localrequest(){
         return false;
     }
 }
-
 ?>

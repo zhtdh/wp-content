@@ -33,7 +33,9 @@ h2 {font-size:21px; font-weight:bold; line-height:40px; display:inline;}
 
 .title1{font-size:14px; font-weight:bold;color:#ffffff;letter-spacing:2px; text-align:center;}
 .title{font-size:16px; font-weight:bold;line-height:27px;color:#cc0000; text-align:left;}
-
+.title a{
+    font-size:16px;
+}
 .table {width:100%; margin:0px 0px 10px 0px; border-left:solid 1px #eaeaea; border-top:solid 1px #eaeaea;}
 .table td {padding:0px 1px 0px 1px; border-right:solid 1px #eaeaea; border-bottom:solid 1px #eaeaea; line-height:30px;}
 .table th {padding:0px 1px 0px 1px; border-right:solid 1px #eaeaea; border-bottom:solid 1px #eaeaea; line-height:30px;}
@@ -58,7 +60,12 @@ h2 {font-size:21px; font-weight:bold; line-height:40px; display:inline;}
 }
 
 .bitdiv{display:inline-block;width:18px;height:18px;margin:0 10px 10px 0px;cursor:pointer;float:right;}
-.defimg{background-image:url(../images/02.png)}
-.curimg{background-image:url(../images/01.png)}
+/*.defimg{background-image:url(../images/02.png)}
+.curimg{background-image:url(../images/01.png)}*/
 /* js的幻灯片样式 -- 结束 */
 
+.message_nr {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+}

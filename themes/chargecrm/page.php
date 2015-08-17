@@ -1,7 +1,33 @@
+<?php get_header(); ?>
+
+
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2015/6/6
- * Time: 22:30
- */
+//var_dump($post->post_title);
+if ($post->post_title == '在线留言') {
+    include($post->post_content);
+} else {
+    if (have_posts()) {
+        the_post();
+        the_content();
+    }
+}
+?>
+</td>
+
+<!-- here to close header -->
+
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<?php get_footer(); ?>

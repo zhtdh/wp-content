@@ -1,8 +1,4 @@
 <?php
-if (is_category(5)) {
-    wp_redirect("./?p=68");
-    exit;
-}
 ?>
 
 
@@ -10,9 +6,6 @@ if (is_category(5)) {
 get_header();
 ?>
 
-<ol class="breadcrumb block-shadow">
-    <?php include('bread.php'); ?>
-</ol>
 
         <table class="table table-hover block-shadow">
             <thead> <tr>
@@ -55,3 +48,4 @@ get_header();
 </tr>
 </tbody>
 </table>
+categorycategorycategorycategorycategory

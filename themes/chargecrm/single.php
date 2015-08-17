@@ -1,67 +1,19 @@
-<?php get_header(); ?>
+<?php get_header();
+$cur_cat = get_the_category(get_the_ID());
+$cur_post = get_page(get_the_ID());
+?>
 
+<p class="Stitle">
+    <font style="float:right; margin-right:10px;">您当前的页面是：
+        <a href="/">首页</a> &gt;
+        <a href="<?php echo get_category_link($cur_cat[0]->cat_ID); ?>"><?php echo $cur_cat[0]->name; ?></a>
+    </font>
 
-<div class="max-width" style="margin-left: -15px;">
-
-    <div class="row " style="height:300px;padding-left:15px">
-        <img class="img-responsive block-shadow" src="<?php
-        $l_src = "";
-        if (is_category('product')) $l_src = bloginfo('template_url') + '/top2.jpg';
-        elseif (is_category('company')) $l_src = bloginfo('template_url') + '/top1.jpg';
-        else $l_src = 'top3.jpg';
-        echo get_stylesheet_directory_uri(). '/img/' .$l_src ;
-        ?>">
-    </div>
-
-    <br>
-
-    <div class="row" >
-        <div class="col-xs-3">
-            <?php get_sidebar(1); ?>
-            <br>
-            <div class="panel-group block-shadow" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <a data-toggle="collapse" data-parent="#accordion" href="sec/#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span class="em-primary" style="color:white;font-size: 12px;"> 扫一扫 </span>
-                        </a>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            <img class = "img-responsive" src="<?php echo get_bloginfo('template_url') .'/img/top1.jpg'?>" alt="iphone">
-                        </div>
-                    </div>
-                </div>
-                <div class="panel">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="sec/#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <span style="color:white;font-size: 12px;"> 公司文化 </span>
-                        </a>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
-                            创新引领科技，为美好明天努力耕耘！
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xs-9">
-
-            <ol class="breadcrumb block-shadow">
-                <?php include('bread.php'); ?>
-            </ol>
+</p>
 
             <div class="block-border-all block-shadow" style="min-height:600px; width:100%;padding:20px;">
 
-                <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-                <br/>
-                <?php the_time('Y年n月j日') ?>
-                <br/>
-                <?php the_tags('标签：', ', ', ''); ?>
-                <br/>
+                <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> ---------  <?php the_time('Y年n月j日') ?>    </h3>
 
                 <?php
                 if( have_posts() ){
@@ -76,10 +28,25 @@
 
             </div>
 
-        </div>
-    </div>
-</div>
+
+
+
+</td>
+
+<!-- here to close header -->
+
+</tr>
+</tbody>
+</table>
 
 
 
 
+
+
+
+
+
+
+
+<?php get_footer(); ?>
