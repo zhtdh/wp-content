@@ -103,11 +103,11 @@ session_start();
                 <div style="padding-left:4px; padding-right:4px; height:200px;background-color:#f4f3f3;" class="text1">
                     <div id="rolllink" style="overflow: hidden; width: 230px; height: 190px">
                         <div id="rolllink1">&nbsp;&nbsp;
-                            <strong><?php bloginfo('name'); ?></strong>
+                            <!-- <strong><?php //bloginfo('name'); ?></strong>-->
                             <?php echo get_page_by_title('公司简介1')->post_content;?>
                         </div>
                         <div id="rolllink2">&nbsp;&nbsp;
-                            <strong><?php bloginfo('name'); ?></strong>
+                            <!-- <strong><?php //bloginfo('name'); ?></strong>-->
                             <?php echo get_page_by_title('公司简介1')->post_content;?>
                         </div>
                     </div>
@@ -154,12 +154,12 @@ session_start();
 
                                     //box.add({"url":"图片地址","title":"悬浮标题","href":"链接地址"})
                                     box.add({
-                                        "url": "<?php bloginfo('template_url'); ?>/images/IMG_0694.jpg",
+                                        "url": "<?php bloginfo('template_url'); ?>/images/l1.jpg",
                                         "href": "<?php bloginfo('template_url'); ?>/",
                                         "title": "悬浮提示标题1"
                                     })
                                     box.add({
-                                        "url": "<?php bloginfo('template_url'); ?>/images/IMG_1060.jpg",
+                                        "url": "<?php bloginfo('template_url'); ?>/images/l2.jpg",
                                         "href": "<?php bloginfo('template_url'); ?>/",
                                         "title": "悬浮提示标题2"
                                     })

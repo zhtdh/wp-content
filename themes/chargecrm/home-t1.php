@@ -2,10 +2,10 @@
 	<div class="title">●公司简介</div>
 	<div style="height:9px; background:url(<?php bloginfo('template_url'); ?>/images/heec_005.gif)"></div>
 	<div class="text1" style="padding:6px; padding-bottom:0px; padding-top:0px; vertical-align:top;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>青岛津港国际物流有限公司</strong>
-        是一家具有较大规模的专门从事快运服务的，专营青岛到全国各地往返货物运输配送仓储等为一体化服务、组织健全、实力雄厚、经验丰富、设施完善、有数千家合作伙伴。我们备有各种吨位的各型车辆，可承接大、小吨位货物，可为货物代办保险。在合作运行期间保证贵公司货物安全24小时为您提供货物查询、业务咨询、实现诚信、准时、安全、便利的服务目标，并保证运输价格合理低廉。<br>
-&nbsp;&nbsp;&nbsp;&nbsp;大件运输：公司拥有普通货物运输车辆近百部，专业的大件运输设备：德国奔驰4860、4850A全挂牵引车、法国NICOLAS全挂液压平板车组，20米超重平板，80公分超低四桥抽拉板，雷诺420马力17.5米超低抽拉板车，超大设备轴线运输车，大型拖炮车及框架车。最大单件承运能力达400吨。 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;经营理念：以市场需求为导向，以物流系统优化为基础，以信息技术和管理 技术为手段，构筑完整的综合价值链。为客户提供“安全、准时、经 济、快捷”的物流服务，满足客户的各种需求；除铁路行邮运输业务外，还建立了公路运输网络，自行开发了仓库管理系统，包括入库、分拣、库存、流通加工等；为客户承运的货物，提供全程的订单管理。 <br>
-管理系统包括：订单、运输、业务监控、质量、装卸和客服管理。 </div>
+        是集低温市内配送、冷藏干线运输服务为一体的专业冷藏物流公司。在多年的低温冷链物流业务发展过程中，我们积累点滴经验，循序渐进，不断进步，如今已是拥有自备车辆二十余台，合作车辆五十余台的中等规模冷藏运输企业。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;在保证货物运输及时性和准确性的同时，我们努力提升司机及办事人员素质，通过严格的 管理，我们把冷链运输的关键环节 “温度、速度和态度”变成我们自身的竞争优势，并将其提升为我们的服务宗旨<br>
+&nbsp;&nbsp;&nbsp;&nbsp;本着“让客户满意”的服务态度，我公司瞄准市场，定位于冷链运输，为终端客户提供安全、准确、快捷的冷藏车运输服务。我们不断积累专业冷链服务经验，致力于以专业水平和诚信态度，努力为客户提供值得信赖的优质服务。稳定的客户群体、专业的服务品质和以客户为尊的服务理念，使我们的发展蒸蒸日上。<br>
+</div>
 <div class="title">●图片展示</div>
 	<div style="height:9px; background:url(<?php bloginfo('template_url'); ?>/images/heec_005.gif)"></div>
 	<div class="text1" style="padding:6px; padding-bottom:0px; padding-top:0px; vertical-align:top;"></div>
@@ -14,30 +14,30 @@
       <tbody><tr>
         <td id="demo1" colspan="3"><table width="100%">
             <tbody><tr>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/1.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/2.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/3.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/4.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/5.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/6.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/7.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/8.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/9.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/10.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c1.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c2.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c3.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c4.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c5.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c6.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c7.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c8.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c9.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c10.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
             </tr>
         </tbody></table></td>
         <td id="demo2" valign="top"><table width="100%">
             <tbody><tr>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/1.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/2.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/3.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/4.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/5.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/6.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/7.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/8.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/9.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
-              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/10.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c1.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c2.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c3.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c4.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c5.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c6.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c7.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c8.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c9.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
+              <td width="130"><img src="<?php bloginfo('template_url'); ?>/images/c10.jpg" height="120" hspace="2" border="0" onmouseover="this.style.border=&quot;1px solid #e31a13&quot;" onmouseout="this.style.border=&quot;1px solid #CCC&quot;" style="border:1px solid #CCC;"></td>
             </tr>
         </tbody></table></td>
       </tr>
