@@ -25,7 +25,8 @@ function getRemoteIP() {
 }
 
 function localrequest(){
-    if (getRemoteIP() == '221.215.99.130'){
+    $remoteClientIp = getRemoteIP();
+    if ($remoteClientIp == '221.215.99.130' or substr($remoteClientIp,0,10) == '172.40.68.'){
         return true;
     }else{
         return false;

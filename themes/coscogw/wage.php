@@ -15,9 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $loginUserName = $_POST['LoginName'];
     $loginUserPw = $_POST['LoginPwd'];
     $authcode = $_POST['LoginiptCode'];
-    $statement = $business_db->prepare("select query_pw from employee where employee_no = :employeeNo");
-    $statement->execute(array('employeeNo' => $loginUserName));
-    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    $statement = oci_parse($business_db,"select query_pw from employee where employee_no = :employeeNo");
+    oci_bind_by_name($statement,":employeeNo",$loginUserName);
+    oci_execute($statement);
+    $row = oci_fetch_assoc($statement);
     if (empty($row['QUERY_PW'])){
         $logerror = "此工号未开通查询功能,请联系人事部门!";
     }else {
@@ -33,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $_SESSION['EMPLOYEENO'] = null;
     }
-    $statement = null;
+    oci_free_statement($statement);
 }
 if (empty($_SESSION['EMPLOYEENO'])){
     if (!empty($logerror)){

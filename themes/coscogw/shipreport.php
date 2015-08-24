@@ -12,7 +12,7 @@ if (!logincheck()){
     echo '未登录';
     exit;
 }
-$business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
+$business_db = oci_pconnect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
 
 ?>
 
@@ -45,9 +45,10 @@ $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectP
                 . " and c.cntr is not null and c.retire_id <> '1' "
                 . " and b.tran_port_cod = td.port_cod and b.disc_port_cod = dp.port_cod"
                 . " order by b.bill_no,c.cntr";
-    $exec = $business_db->prepare($queryStr);
-    $exec->execute(array('is_ship_no' => $_POST["shipno"]));
-    while ($row = $exec->fetch(PDO::FETCH_ASSOC)){
+    $exec = oci_parse($business_db,$queryStr);
+    oci_bind_by_name($exec,":is_ship_no",$_POST["shipno"]);
+    oci_execute($exec);
+    while ($row = oci_fetch_assoc($exec)){
         ?>
         <tr>
             <td><?php echo mb_convert_encoding($row['CNTR'],'utf-8', 'gbk');?></td>
@@ -68,9 +69,9 @@ $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectP
     <?php
     }
     $queryStr = null;
-    $exec = null;
+    oci_free_statement($exec);
     $row = null;
-    $business_db = null;
+    oci_close($business_db);
 ?>
 
     </tbody>

@@ -68,7 +68,7 @@ if ($wagetype == 'YFGZ'){
     exit;
 }
 
-$business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
+$business_db = oci_pconnect($oracle_connectName,$oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
 
 $queryStr = "SELECT fee_det.EMPLOYEE_NO,fee_det.EMPLOYEE_NAME,fee_det.YEAR,fee_det.MONTH,c_fee_cod.fee_nam FEE_COD,"
             . "fee_det.AMOUNT,fee_det.REMARK"
@@ -79,11 +79,11 @@ $queryStr = "SELECT fee_det.EMPLOYEE_NO,fee_det.EMPLOYEE_NAME,fee_det.YEAR,fee_d
             . " and fee_det.FEE_TYP_COD " . $type
             . " and fee_det.fee_cod = c_fee_cod.fee_cod"
             . " order by fee_det.fee_cod ";
-$exec = $business_db->prepare($queryStr);
-$exec->bindParam('as_employee_no',$employee_no,PDO::PARAM_STR);
-$exec->bindParam('as_year',$year,PDO::PARAM_STR);
-$exec->bindParam('as_month',$month,PDO::PARAM_STR);
-$exec->execute();
+$exec = oci_parse($business_db,$queryStr);
+oci_bind_by_name($exec,':as_employee_no',$employee_no);
+oci_bind_by_name($exec,':as_year',$year);
+oci_bind_by_name($exec,':as_month',$month);
+oci_execute($exec);
 
 ?>
 <table class="table table-striped table-bordered">
@@ -99,7 +99,7 @@ $exec->execute();
     </thead>
     <tbody>
     <?php
-        while ($row = $exec->fetch(PDO::FETCH_ASSOC)){
+        while ($row = oci_fetch_assoc($exec)){
             ?>
             <tr>
                 <td><?php echo mb_convert_encoding($row['EMPLOYEE_NAME'],'utf-8', 'gbk');?></td>
@@ -111,6 +111,7 @@ $exec->execute();
             </tr>
         <?php
         }
+    oci_free_statement($exec);
     $queryStr = "SELECT sum(fee_det.amount) amount "
         . " FROM FEE_DET,c_fee_cod "
         . " where fee_det.EMPLOYEE_NO = :as_employee_no"
@@ -119,12 +120,12 @@ $exec->execute();
         . " and fee_det.FEE_TYP_COD " . $type
         . " and fee_det.fee_cod = c_fee_cod.fee_cod"
         . " order by fee_det.fee_cod ";
-    $exec = $business_db->prepare($queryStr);
-    $exec->bindParam('as_employee_no',$employee_no,PDO::PARAM_STR);
-    $exec->bindParam('as_year',$year,PDO::PARAM_STR);
-    $exec->bindParam('as_month',$month,PDO::PARAM_STR);
-    $exec->execute();
-    $row = $exec->fetch(PDO::FETCH_ASSOC);
+    $exec = oci_parse($business_db,$queryStr);
+    oci_bind_by_name($exec,':as_employee_no',$employee_no);
+    oci_bind_by_name($exec,':as_year',$year);
+    oci_bind_by_name($exec,':as_month',$month);
+    oci_execute($exec);
+    $row = oci_fetch_assoc($exec);
     ?>
     <tr>
         <td>合计：</td>
@@ -137,9 +138,9 @@ $exec->execute();
     <?php
 
         $queryStr = null;
-        $exec = null;
+        oci_free_statement($exec);
         $row = null;
-        $business_db = null;
+        oci_close($business_db);
     ?>
     </tbody>
 </table>

@@ -6,16 +6,17 @@
         $loginUserName = $_POST['LoginName'];
         $loginUserPw = $_POST['LoginPwd'];
         $authcode = $_POST['LoginiptCode'];
-        $statement = $business_db->prepare("select count(1) clientcount from c_client_cod where client_cod = :clientcod");
-        $statement->execute(array('clientcod' => $loginUserName));
-        $row = $statement->fetch();
+        $statement = oci_parse($business_db,"select count(1) clientcount from c_client_cod where client_cod = :clientcod");
+        oci_bind_by_name($statement,":clientcod",$loginUserName);
+        oci_execute($statement);
+        $row = oci_fetch_assoc($statement);
         if (($row['CLIENTCOUNT'] > 0) and $loginUserName == $loginUserPw and $_SESSION['AUTHCODE'] == $authcode) {
             //echo 'success';
             $_SESSION['ship-query'] = $loginUserName;
         } else {
             $_SESSION['ship-query'] = null;
         }
-        $statement = null;
+        oci_free_statement($statement);
     }
     if (empty($_SESSION['ship-query'])) {
 

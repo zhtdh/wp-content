@@ -4,12 +4,13 @@
     $queryStr = "select s.ship_no ship_no,s.ship_cod ship_cod,s.ship_nam ship_nam,s.e_voyage e_voyage "
         . " from ship s where s.ship_corp_cod = :client_cod and (sysdate - s.leave_port_tim) < 300 "
         . "order by s.ship_cod,s.e_voyage";
-    $exec = $business_db->prepare($queryStr);
-    $exec->execute(array('client_cod' => $_SESSION['ship-query']));
+    $exec = oci_parse($business_db,$queryStr);
+    oci_bind_by_name($exec,":client_cod",$_SESSION['ship-query']);
+    oci_execute($exec);
     $ships = array();
     $oldshipcod = '';
     $newshipcod = '';
-    while ($row = $exec->fetch(PDO::FETCH_ASSOC)){
+    while ($row = oci_fetch_assoc($exec)){
         $newshipcod = $row['SHIP_COD'];
         if ($newshipcod == $oldshipcod){
             $ships[$newshipcod]['lists'][] = array('shipNo' => mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk'),
@@ -27,6 +28,7 @@
         }
         $oldshipcod = $row['SHIP_COD'];
     }
+
     //var_dump($row);
     //$str=json_encode($row,JSON_UNESCAPED_UNICODE);
     $str=wp_json_encode($ships);
@@ -69,7 +71,7 @@
 </script>
 
 <?php
-    $exec = null;
+    oci_free_statement($exec);
     $row = null;
     $queryStr = null;
     $oldshipcod = null;

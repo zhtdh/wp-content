@@ -44,10 +44,10 @@ $systime = new DateTime("now", $dtz);
                                 . " and t.cntr_typ_cod in ('GP','HC','RF','RH') and nvl(t.pre_tak_id,'0') = '0' "
                                 . " and t.cntr_siz_cod = a.cntr_siz_cod(+) and t.cntr_typ_cod = a.cntr_typ_cod(+) "
                                 . " group by t.cntr_siz_cod,t.cntr_typ_cod,a.cnum";
-                            $statement = $business_db->prepare($queryStr);
-                            $statement->execute();
+                            $statement = oci_parse($business_db,$queryStr);
+                            oci_execute($statement);
                             $num = 0;
-                            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                            while ($row = oci_fetch_assoc($statement)) {
                                 $num++;
                                 ?>
                                 <tr>
@@ -58,6 +58,8 @@ $systime = new DateTime("now", $dtz);
                                 </tr>
                             <?php
                             }
+                            $queryStr = null;
+                            oci_free_statement($statement);
                             ?>
                             </tbody>
                         </table>

@@ -68,10 +68,11 @@
                     . " from contract_cntr cc,contract_cntr_cargo ccc,ship s,cntr_file c "
                     . " where cc.cntr_oper_cod = 'MKL' and cc.cntr_sn = ccc.cntr_sn and cc.ship_no = s.ship_no"
                     . " and cc.cntr = :ls_cntr  and cc.cntr_no = c.cntr_no";
-                $statement = $business_db->prepare($queryStr);
-                $statement->execute(array('ls_cntr' => $cntr));
+                $statement = oci_parse($business_db,$queryStr);
+                oci_bind_by_name($statement,":ls_cntr",$cntr);
+                oci_execute($statement);
                 $num=0;
-                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                while ($row = oci_fetch_assoc($statement)) {
                     $num++;
                     ?>
                     <tr>
@@ -95,7 +96,7 @@
 
                     <?php
                 }
-                $statement = null;
+                oci_free_statement($statement);
                 $queryStr = null;
                 $num = null;
                 $row = null;

@@ -5,13 +5,14 @@ $billquery_shipno = null;
 //var_dump($billquery_billno);
 if (!empty($billquery_billno)) {
     //echo '查找';
-    $statement = $business_db->prepare("select max(ship_no) ship_no from contract_bill where bill_no = :bill_no");
-    $statement->execute(array('bill_no' => $billquery_billno));
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $statement = oci_parse($business_db,"select max(ship_no) ship_no from contract_bill where bill_no = :bill_no");
+    oci_bind_by_name($statement,":bill_no",$billquery_billno);
+    oci_execute($statement);
+    while ($row = oci_fetch_assoc($statement)) {
         $billquery_shipno = mb_convert_encoding($row['SHIP_NO'], 'utf-8', 'gbk');
         //var_dump($billquery_shipno);
     }
-    $statement = null;
+    oci_free_statement($statement);
 }
 //var_dump($billquery_shipno);
 ?>
@@ -22,8 +23,8 @@ if (!empty($billquery_billno)) {
             $('#ebillno').val($('#billno').val());
             //console.info($('#ebillno').val());
             $('#billdownload').submit();
+        });
     });
-});
 </script>
 <div class="DRight">
     <div style="margin-left: 10px;">
@@ -76,29 +77,29 @@ if (!empty($billquery_billno)) {
         <div class="tab-content" id="tabCons">
             <div class="tab-pane fade in active con" id="billquery-ship">
                 <?php
-                include('billquery-ship.php');
+                include('billquery-ship-oci.php');
                 ?>
             </div>
             <div class="tab-pane fade con" id="billquery-bill">
-                <?php include('billquery-bill.php'); ?>
+                <?php include('billquery-bill-oci.php'); ?>
             </div>
             <div class="tab-pane fade con" id="billquery-contractcntr">
-                <?php include('billquery-contractcntr.php'); ?>
+                <?php include('billquery-contractcntr-oci.php'); ?>
             </div>
             <div class="tab-pane fade con" id="billquery-contractcntrcargo">
-                <?php include('billquery-contractcntrcargo.php'); ?>
+                <?php include('billquery-contractcntrcargo-oci.php'); ?>
             </div>
             <div class="tab-pane fade con" id="billquery-outcntr">
-                <?php include('billquery-outcntr.php'); ?>
+                <?php include('billquery-outcntr-oci.php'); ?>
             </div>
             <div class="tab-pane fade con" id="billquery-incntr">
-                <?php include('billquery-incntr.php'); ?>
+                <?php include('billquery-incntr-oci.php'); ?>
             </div>
             <div class="tab-pane fade con" id="billquery-receivecargo">
-                <?php include('billquery-receivecargo.php'); ?>
+                <?php include('billquery-receivecargo-oci.php'); ?>
             </div>
             <div class="tab-pane fade con" id="billquery-ciq">
-                <?php include('billquery-ciq.php'); ?>
+                <?php include('billquery-ciq-oci.php'); ?>
             </div>
         </div>
 

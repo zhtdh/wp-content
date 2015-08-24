@@ -54,7 +54,7 @@ if (empty($month)){
 //var_dump($month);
 //echo $year .'/' . $month . '/' . $employee_no;
 //exit;
-$business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
+$business_db = oci_pconnect($oracle_connectName,$oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
 
 ?>
 <script type="text/javascript">
@@ -98,12 +98,18 @@ $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectP
 
     $result = '';
     $queryStr = " begin p_income_display_single(:iv_year,:iv_month,:iv_employee_no,:ov_rtn); end;";
-    $exec = $business_db->prepare($queryStr);
+    $exec = oci_parse($business_db,$queryStr);
+    oci_bind_by_name($exec,":iv_year",$year,4);
+    oci_bind_by_name($exec,":iv_month",$month,2);
+    oci_bind_by_name($exec,":iv_employee_no",$employee_no,5);
+    oci_bind_by_name($exec,":ov_rtn",$result,200);
+    /*
     $exec->bindParam('iv_year',$year,PDO::PARAM_STR);
     $exec->bindParam('iv_month',$month,PDO::PARAM_STR);
     $exec->bindParam('iv_employee_no',$employee_no,PDO::PARAM_STR);
-    $exec->bindParam('ov_rtn',$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,200);
-    $exec->execute();
+    $exec->bindParam('ov_rtn',$result,PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT,200);*/
+    oci_execute($exec);
+    oci_free_statement($exec);
     //var_dump($result);
     if ($result == 'SUC'){
         $queryStr = " select employee_name,year,month,yfgz,yuejiang,"
@@ -112,9 +118,9 @@ $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectP
                 . " (kougz + koutaxother + koujiangjin + meals) kou,"
                 . " (zhudao  +  zengliang  +  yfgz  +  yuejiang  +  bannian  +  nianzhong  +  zongjingli  +  danxiang - kougz - koutaxother - koujiangjin - meals) sf"
                 . " from t_employee_income order by year,month";
-        $exec = $business_db->prepare($queryStr);
-        $exec->execute();
-        while ($row = $exec->fetch(PDO::FETCH_ASSOC)){
+        $exec = oci_parse($business_db,$queryStr);
+        oci_execute($exec);
+        while ($row = oci_fetch_assoc($exec)){
             ?>
             <tr>
                 <td><?php echo mb_convert_encoding($row['EMPLOYEE_NAME'],'utf-8', 'gbk');?></td>
@@ -151,13 +157,13 @@ $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectP
         <?php
         }
         $queryStr = null;
-        $exec = null;
+        oci_free_statement($exec);
         $row = null;
     }else{
         echo '内部错误，请联系系统管理员!'.$result;
         exit;
     }
-    $business_db = null;
+    oci_close($business_db);
 
     ?>
     </tbody>

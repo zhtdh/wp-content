@@ -51,12 +51,16 @@
             $result = '';
             if (empty($error)) {
                 $queryStr = " begin p_change_querypw(:iv_employee_no,:iv_oldpw,:iv_newpw,:ov_rtn); end;";
-                $exec = $business_db->prepare($queryStr);
+                $exec = oci_parse($business_db,$queryStr);
+                oci_bind_by_name($exec,":iv_employee_no",$employee_no,5);
+                oci_bind_by_name($exec,":iv_oldpw",$oldpw,40);
+                oci_bind_by_name($exec,":iv_newpw",$newpw,40);
+                oci_bind_by_name($exec,":ov_rtn",$result,200);/*
                 $exec->bindParam('iv_employee_no', $employee_no, PDO::PARAM_STR);
                 $exec->bindParam('iv_oldpw', $oldpw, PDO::PARAM_STR);
                 $exec->bindParam('iv_newpw', $newpw, PDO::PARAM_STR);
-                $exec->bindParam('ov_rtn', $result, PDO::PARAM_STR | PDO::PARAM_INPUT_OUTPUT, 200);
-                $exec->execute();
+                $exec->bindParam('ov_rtn', $result, PDO::PARAM_STR | PDO::PARAM_INPUT_OUTPUT, 200);*/
+                oci_execute($exec);
                 if ($result == 'SUC'){
                     $_SESSION['EMPLOYEENO'] = null;
                     echo "<h3>密码修改成功</h3>";

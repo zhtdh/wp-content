@@ -23,9 +23,11 @@ get_header();
     if (in_category(['business', 'msk','internal'])) {
         //此处定义 $business_db 数据库链接
         include_once('dbconnect.php');
-        $business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
+        //$business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
+        $business_db = oci_pconnect($oracle_connectName,$oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
         include($post->post_content);
-        $business_db = null;
+        //$business_db = null;
+        oci_close($business_db);
         //echo '关闭';
     } else {
         ?>

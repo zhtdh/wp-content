@@ -7,12 +7,13 @@
  */
 //数据查询
 //var_dump($_POST["shipno"]);
+session_start();
 include_once('dbconnect.php');
 if (!logincheck()){
     echo '未登录';
     exit;
 }
-$business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
+$business_db = oci_pconnect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
 $queryStr = " select c.cntr,c.cntr_siz_cod,c.cntr_typ_cod,b.bill_no,c.cntr_seal_no,c.cargo_pieces,"
     . "c.cntr_gross_wgt,c.cargo_volume,c.temp_set,c.humidity,c.ventilation,td.c_port_nam,"
     . "dp.c_port_nam as c_port_nam_a"
@@ -22,8 +23,9 @@ $queryStr = " select c.cntr,c.cntr_siz_cod,c.cntr_typ_cod,b.bill_no,c.cntr_seal_
     . " and c.cntr is not null and c.retire_id <> '1' "
     . " and b.tran_port_cod = td.port_cod and b.disc_port_cod = dp.port_cod"
     . " order by b.bill_no,c.cntr";
-$exec = $business_db->prepare($queryStr);
-$exec->execute(array('is_ship_no' => $_POST["shipno"]));
+$exec = oci_parse($business_db,$queryStr);
+oci_bind_by_name($exec,":is_ship_no",$_POST["shipno"]);
+oci_execute($exec);
 
 //创建文件
 error_reporting(E_ALL);
@@ -66,7 +68,7 @@ $objPHPExcel->setActiveSheetIndex(0)
     ->setCellValue('L1', '中转港')
     ->setCellValue('M1', '目的港');
 $i = 1;
-while($row = $exec->fetch(PDO::FETCH_ASSOC)){
+while($row = oci_fetch_assoc($exec)){
     $i++;
     $objPHPExcel->setActiveSheetIndex(0)
         ->setCellValue('A'.$i, mb_convert_encoding($row['CNTR'],'utf-8', 'gbk'))
@@ -121,8 +123,8 @@ fclose($file);
 $filename = null;
 $pathfilename = null;
 $row = null;
-$exec = null;
+oci_free_statement($exec);
 $queryStr = null;
-$business_db = null;
+oci_close($business_db);
 
 ?>
