@@ -54,7 +54,7 @@ if (empty($month)){
 //var_dump($month);
 //echo $year .'/' . $month . '/' . $employee_no;
 //exit;
-$business_db = oci_pconnect($oracle_connectName,$oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+$business_db = getgwdb();
 
 ?>
 <script type="text/javascript">

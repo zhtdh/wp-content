@@ -12,7 +12,7 @@ if (!logincheck()){
     echo '未登录';
     exit;
 }
-$business_db = oci_pconnect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+$business_db = getgwdb();
 
 ?>
 

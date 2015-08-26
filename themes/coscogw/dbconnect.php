@@ -10,4 +10,8 @@ function logincheck(){
         return true;
     }
 }
+function getgwdb(){
+    global $oci_gwconnectStr,$oracle_connectName,$oralce_connectPW;
+    return oci_connect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+}
 ?>

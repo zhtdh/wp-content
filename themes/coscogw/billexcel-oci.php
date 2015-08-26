@@ -36,7 +36,8 @@ $objPHPExcel->getProperties()->setCreator("coscogw")
 
 include_once('dbconnect.php');
 //$business_db = new PDO($oracle_connectStr, $oracle_connectName, $oralce_connectPW);
-$business_db = oci_pconnect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+//$business_db = oci_pconnect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+$business_db = getgwdb();
 $billno = strtoupper($_POST['ebillno']);
 if (empty($billno)){
     echo '提单号错误';

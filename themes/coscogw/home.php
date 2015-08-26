@@ -100,7 +100,7 @@ get_header();
             <div class="scrollver" style="width: 310px; height: 180px; overflow: hidden">
                 <div style="height: 128px; overflow: hidden; margin-top:40px; margin-left:10px">
                     <div style="height: 128px; overflow: hidden;margin: 0px; font-size: 12px">
-                        <marquee id="scrollver-m" direction="up" scrolldelay="0" scrollamount="1"
+                        <marquee id="scrollver-m" direction="up" scrolldelay="0" scrollamount="1" style="width:310px;height: 180px;"
                                  onMouseOut="this.start();"
                                  onMouseOver="this.stop()"
                             >

@@ -68,7 +68,7 @@ if ($wagetype == 'YFGZ'){
     exit;
 }
 
-$business_db = oci_pconnect($oracle_connectName,$oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+$business_db = getgwdb();
 
 $queryStr = "SELECT fee_det.EMPLOYEE_NO,fee_det.EMPLOYEE_NAME,fee_det.YEAR,fee_det.MONTH,c_fee_cod.fee_nam FEE_COD,"
             . "fee_det.AMOUNT,fee_det.REMARK"

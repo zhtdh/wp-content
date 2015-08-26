@@ -13,7 +13,7 @@ if (!logincheck()){
     echo '未登录';
     exit;
 }
-$business_db = oci_pconnect($oracle_connectName, $oralce_connectPW,$oci_gwconnectStr,"zhs16gbk");
+$business_db = getgwdb();
 $queryStr = " select c.cntr,c.cntr_siz_cod,c.cntr_typ_cod,b.bill_no,c.cntr_seal_no,c.cargo_pieces,"
     . "c.cntr_gross_wgt,c.cargo_volume,c.temp_set,c.humidity,c.ventilation,td.c_port_nam,"
     . "dp.c_port_nam as c_port_nam_a"
