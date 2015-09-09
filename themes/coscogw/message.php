@@ -4,7 +4,9 @@
  * User: zhangtao
  * Date: 15-7-24
  * Time: 上午10:23
+
  */
+include_once(dirname(__FILE__).'../../../../weix/sendmessage.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //session_start();
@@ -14,12 +16,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //var_dump($authcode);
     if ($_SESSION['AUTHCODE'] == $authcode) {
         $wpdb->insert('wp_messages', array('message_content' => $message), array('%s'));
-        ?>
-        <div class="message_nr">
-            </br>
-            <h4>留言保存成功，我们将尽快与您联系.<a href="<?php echo post_permalink($post->ID); ?>">继续留言</a></h4>
-        </div>
+        //var_dump($wpdb->get_var("SELECT * FROM wp_weixin_AccessToken",0,0));
+        if (sendMessage($message) == 0) {
+        //if (1 == 0) {
 
+            ?>
+            <div class="message_nr">
+                </br>
+                <h4>留言保存成功，我们将尽快与您联系.<a href="<?php echo post_permalink($post->ID); ?>">继续留言</a></h4>
+            </div>
+        <?php
+        }else {
+            ?>
+            <div class="message_nr">
+                </br>
+                <h4>留言失败，请联系系统管理员.</h4>
+            </div>
+        <?php
+        }
+        ?>
     <?php
     }else{
         ?>

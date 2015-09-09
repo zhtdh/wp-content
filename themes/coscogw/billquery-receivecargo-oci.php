@@ -13,10 +13,13 @@
     <tbody>
     <?php
     if (!empty($billquery_shipno) and !empty($billquery_billno) ) {
-        $queryStr = "select b.combine_no from contract_bill where bill_no = :bill_no and ship_no = :ship_no";
-        $exec = $business_db->prepare($queryStr);
-        $exec->execute(array('ship_no' => $billquery_shipno, 'bill_no' => $billquery_billno));
-        $row = $exec->fetch();
+        $queryStr = " select b.combine_no from contract_bill b where bill_no = :bill_no and ship_no = :ship_no";
+        //$queryStr = " select count(1) co from contract_bill where bill_no = :bill_no and ship_no = :ship_no";
+        $exec = oci_parse($business_db,$queryStr);
+        oci_bind_by_name($exec,":ship_no",$billquery_shipno);
+        oci_bind_by_name($exec,":bill_no",$billquery_billno);
+        if (oci_execute($exec)){
+        $row = oci_fetch_assoc($exec);
         if ($row['COMBINE_NO'] == null or $row['COMBINE_NO'] == $billquery_billno) {
             $queryStr = " select b.bill_no,to_char(d.delivery_tim,'yyyy-mm-dd hh24:mi:ss') delivery_tim,d.truck_no,d.driver,d.cargo_pieces,d.cargo_volume,"
                 . "d.cargo_weight "
@@ -30,6 +33,7 @@
                 . " where b.contract_no = d.contract_no"
                 . " and b.ship_no = :ship_no and b.combine_no = :bill_no ";
         }
+        oci_free_statement($exec);
         $exec = oci_parse($business_db,$queryStr);
         oci_bind_by_name($exec,":ship_no",$billquery_shipno);
         oci_bind_by_name($exec,":bill_no",$billquery_billno);
@@ -50,6 +54,7 @@
         oci_free_statement($exec);
         $row = null;
         $queryStr = null;
+    }
     }
     ?>
 

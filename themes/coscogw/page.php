@@ -5,6 +5,15 @@
  * Date: 15-6-3
  * Time: 上午10:35
  */
+if (get_the_title() == '注销') {
+    $fromurl = empty($_GET['fromurl']) ? home_url() : $_GET['fromurl'];
+    session_start();
+    $_SESSION['ship-query'] = null;
+    $_SESSION['EMPLOYEENO'] = null;
+    Header("HTTP/1.1 303 See Other");
+    Header("Location: $fromurl");
+    exit;
+}
 get_header();
 ?>
     <div class="page-container">

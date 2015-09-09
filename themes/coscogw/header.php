@@ -239,13 +239,8 @@ include_once('init.php');
             <p style="text-align: right">
             <span><a href="<?php echo home_url(); ?>/?p=66">联系我们</a> <br/>
                 <a href="javascript:;" title="收藏本站" id="fav">收藏本站</a>
-                <?php
-                    if (!empty($_SESSION['ship-query'])){ ?>
-                        </br>
-                        <a href="javascript:;">注销<?php echo $_SESSION['ship-query']; ?></a>
-                    <?php }
-                ?>
-
+                </br>
+                <a href="<?php echo home_url();?>/注销?fromurl=<?php echo home_url(add_query_arg(array())); ?>">注销</a>
             </span>
                 <br/>
             </p>
