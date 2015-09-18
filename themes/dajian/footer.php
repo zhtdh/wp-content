@@ -11,7 +11,7 @@
         <div class="copytight">
             版权所有<font face="Arial, Helvetica, sans-serif">&copy; </font>：青岛瑞亚通达物流有限公司
             <strong>联系电话：0532-86916965 <br>
-                详细地址：青岛经济技术开发区江山北路10号
+                详细地址：青岛经济技术开发区江山北路10号  备案号：<?php echo get_option('zh_cn_l10n_icp_num'); ?>
             </strong>
         </div>
     </center>
